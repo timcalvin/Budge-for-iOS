@@ -16,6 +16,9 @@
 		B1EE624B280F932C00B5DFDE /* BudgeColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE624A280F932C00B5DFDE /* BudgeColors.swift */; };
 		B1EE624F280F941C00B5DFDE /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE624E280F941C00B5DFDE /* Settings.swift */; };
 		B1EE6251280F942F00B5DFDE /* Budgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE6250280F942F00B5DFDE /* Budgets.swift */; };
+		B1EE6253280F965200B5DFDE /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE6252280F965200B5DFDE /* HapticsManager.swift */; };
+		B1EE6255280F967500B5DFDE /* DismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE6254280F967500B5DFDE /* DismissKeyboard.swift */; };
+		B1EE6257280F968700B5DFDE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE6256280F968700B5DFDE /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,9 @@
 		B1EE624A280F932C00B5DFDE /* BudgeColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgeColors.swift; sourceTree = "<group>"; };
 		B1EE624E280F941C00B5DFDE /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		B1EE6250280F942F00B5DFDE /* Budgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budgets.swift; sourceTree = "<group>"; };
+		B1EE6252280F965200B5DFDE /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
+		B1EE6254280F967500B5DFDE /* DismissKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissKeyboard.swift; sourceTree = "<group>"; };
+		B1EE6256280F968700B5DFDE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +139,10 @@
 		B1EE6249280F931600B5DFDE /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				B1EE6256280F968700B5DFDE /* Constants.swift */,
 				B1EE624A280F932C00B5DFDE /* BudgeColors.swift */,
+				B1EE6252280F965200B5DFDE /* HapticsManager.swift */,
+				B1EE6254280F967500B5DFDE /* DismissKeyboard.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -226,10 +235,13 @@
 			files = (
 				B1EE624F280F941C00B5DFDE /* Settings.swift in Sources */,
 				B1EE6245280F91EA00B5DFDE /* BudgeTabView.swift in Sources */,
+				B1EE6255280F967500B5DFDE /* DismissKeyboard.swift in Sources */,
 				B1EE6234280E5B8700B5DFDE /* LaunchView.swift in Sources */,
 				B1EE624B280F932C00B5DFDE /* BudgeColors.swift in Sources */,
+				B1EE6257280F968700B5DFDE /* Constants.swift in Sources */,
 				B1EE6232280E5B8700B5DFDE /* Budge_CDApp.swift in Sources */,
 				B1EE6248280F92B100B5DFDE /* Tabs.swift in Sources */,
+				B1EE6253280F965200B5DFDE /* HapticsManager.swift in Sources */,
 				B1EE6251280F942F00B5DFDE /* Budgets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
