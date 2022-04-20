@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  LaunchView.swift
 //  Budge-CD
 //
 //  Created by Timothy Bryant on 4/18/22.
@@ -7,15 +7,14 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct LaunchView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        BudgeTabView()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        LaunchView()
     }
 }

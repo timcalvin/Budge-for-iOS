@@ -8,17 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		B1EE6232280E5B8700B5DFDE /* Budge_CDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE6231280E5B8700B5DFDE /* Budge_CDApp.swift */; };
-		B1EE6234280E5B8700B5DFDE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE6233280E5B8700B5DFDE /* ContentView.swift */; };
+		B1EE6234280E5B8700B5DFDE /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE6233280E5B8700B5DFDE /* LaunchView.swift */; };
 		B1EE6236280E5B8800B5DFDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1EE6235280E5B8800B5DFDE /* Assets.xcassets */; };
 		B1EE6239280E5B8800B5DFDE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1EE6238280E5B8800B5DFDE /* Preview Assets.xcassets */; };
+		B1EE6245280F91EA00B5DFDE /* BudgeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE6244280F91EA00B5DFDE /* BudgeTabView.swift */; };
+		B1EE6248280F92B100B5DFDE /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE6247280F92B100B5DFDE /* Tabs.swift */; };
+		B1EE624B280F932C00B5DFDE /* BudgeColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE624A280F932C00B5DFDE /* BudgeColors.swift */; };
+		B1EE624F280F941C00B5DFDE /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE624E280F941C00B5DFDE /* Settings.swift */; };
+		B1EE6251280F942F00B5DFDE /* Budgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE6250280F942F00B5DFDE /* Budgets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B1EE622E280E5B8700B5DFDE /* Budge-CD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Budge-CD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1EE6231280E5B8700B5DFDE /* Budge_CDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budge_CDApp.swift; sourceTree = "<group>"; };
-		B1EE6233280E5B8700B5DFDE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B1EE6233280E5B8700B5DFDE /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		B1EE6235280E5B8800B5DFDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1EE6238280E5B8800B5DFDE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B1EE6244280F91EA00B5DFDE /* BudgeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgeTabView.swift; sourceTree = "<group>"; };
+		B1EE6247280F92B100B5DFDE /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
+		B1EE624A280F932C00B5DFDE /* BudgeColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgeColors.swift; sourceTree = "<group>"; };
+		B1EE624E280F941C00B5DFDE /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		B1EE6250280F942F00B5DFDE /* Budgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budgets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +62,11 @@
 			isa = PBXGroup;
 			children = (
 				B1EE6231280E5B8700B5DFDE /* Budge_CDApp.swift */,
-				B1EE6233280E5B8700B5DFDE /* ContentView.swift */,
+				B1EE623F280F910200B5DFDE /* Views */,
+				B1EE6240280F911400B5DFDE /* ViewModels */,
+				B1EE6241280F912100B5DFDE /* Models */,
+				B1EE6246280F928E00B5DFDE /* Enums */,
+				B1EE6249280F931600B5DFDE /* Helpers */,
 				B1EE6235280E5B8800B5DFDE /* Assets.xcassets */,
 				B1EE6237280E5B8800B5DFDE /* Preview Content */,
 			);
@@ -65,6 +79,79 @@
 				B1EE6238280E5B8800B5DFDE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B1EE623F280F910200B5DFDE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B1EE6242280F915700B5DFDE /* Launch */,
+				B1EE6243280F91B300B5DFDE /* TabView */,
+				B1EE624C280F93F100B5DFDE /* Budgets */,
+				B1EE624D280F940100B5DFDE /* Settings */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B1EE6240280F911400B5DFDE /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B1EE6241280F912100B5DFDE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B1EE6242280F915700B5DFDE /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				B1EE6233280E5B8700B5DFDE /* LaunchView.swift */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		B1EE6243280F91B300B5DFDE /* TabView */ = {
+			isa = PBXGroup;
+			children = (
+				B1EE6244280F91EA00B5DFDE /* BudgeTabView.swift */,
+			);
+			path = TabView;
+			sourceTree = "<group>";
+		};
+		B1EE6246280F928E00B5DFDE /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				B1EE6247280F92B100B5DFDE /* Tabs.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		B1EE6249280F931600B5DFDE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B1EE624A280F932C00B5DFDE /* BudgeColors.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		B1EE624C280F93F100B5DFDE /* Budgets */ = {
+			isa = PBXGroup;
+			children = (
+				B1EE6250280F942F00B5DFDE /* Budgets.swift */,
+			);
+			path = Budgets;
+			sourceTree = "<group>";
+		};
+		B1EE624D280F940100B5DFDE /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				B1EE624E280F941C00B5DFDE /* Settings.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +224,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1EE6234280E5B8700B5DFDE /* ContentView.swift in Sources */,
+				B1EE624F280F941C00B5DFDE /* Settings.swift in Sources */,
+				B1EE6245280F91EA00B5DFDE /* BudgeTabView.swift in Sources */,
+				B1EE6234280E5B8700B5DFDE /* LaunchView.swift in Sources */,
+				B1EE624B280F932C00B5DFDE /* BudgeColors.swift in Sources */,
 				B1EE6232280E5B8700B5DFDE /* Budge_CDApp.swift in Sources */,
+				B1EE6248280F92B100B5DFDE /* Tabs.swift in Sources */,
+				B1EE6251280F942F00B5DFDE /* Budgets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,7 +287,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -249,7 +341,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -264,6 +356,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Budge-CD/Preview Content\"";
@@ -273,8 +366,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -293,6 +387,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Budge-CD/Preview Content\"";
@@ -302,8 +397,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

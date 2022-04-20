@@ -11,7 +11,7 @@ import SwiftUI
 struct Budge_CDApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LaunchView()
         }
     }
 }
