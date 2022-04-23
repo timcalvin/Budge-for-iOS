@@ -103,7 +103,6 @@
 			children = (
 				B1EE6231280E5B8700B5DFDE /* Budge_CDApp.swift */,
 				B1EE623F280F910200B5DFDE /* Views */,
-				B1EE6240280F911400B5DFDE /* ViewModels */,
 				B1EE6241280F912100B5DFDE /* Models */,
 				B1C516392813950F00BC0FB3 /* Components */,
 				B1EE6246280F928E00B5DFDE /* Enums */,
@@ -133,13 +132,6 @@
 				B1EE624D280F940100B5DFDE /* Settings */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		B1EE6240280F911400B5DFDE /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		B1EE6241280F912100B5DFDE /* Models */ = {

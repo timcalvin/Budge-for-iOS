@@ -58,7 +58,7 @@ struct BudgetSetup: View {
                     Spacer()
                     
                     Button {
-                        // Save or update budget
+                        vm.addBudget(name: budgetNameText, value: budgetValue, icon: icon, themeColor: iconColorName)
                         presentationMode.wrappedValue.dismiss()
                     } label: {
                         Text("Done")
@@ -80,10 +80,10 @@ struct BudgetSetup: View {
                             Spacer()
                             ZStack {
                                 Circle()
-                                    .foregroundColor(budget == nil ? .budgeBlue : vm.iconColor(fromBudgetColor: budget?.themeColor ?? "red"))
+                                    .foregroundColor(iconColor)
                                     .frame(width: 120, height: 120)
                                     .shadow(radius: 5)
-                                Image(systemName: budget?.icon ?? "list.bullet")
+                                Image(systemName: icon)
                                     .resizable()
                                     .scaledToFit()
                                     .foregroundColor(.white)
@@ -182,7 +182,7 @@ struct BudgetSetup: View {
                     LazyVGrid(columns: layout, alignment: .center, spacing: 20, content: {
                         ForEach(iconData, id: \.self) { icon in
                             Button {
-                                budget?.icon = icon
+                                self.icon = icon
                             } label: {
                                 ZStack {
                                     Circle()
@@ -230,6 +230,15 @@ struct BudgetSetup: View {
         }
         .onTapGesture {
             dismissKeyboard()
+        }
+        .onAppear {
+            if let budget = budget {
+                budgetNameText = budget.name ?? "New Budget"
+                budgetValue = budget.value
+                icon = budget.icon ?? "list.bullet"
+                iconColorName = budget.themeColor ?? "default"
+                iconColor = vm.iconColor(fromBudgetColor: budget.themeColor ?? "default")
+            }
         }
     }
 }

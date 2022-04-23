@@ -34,6 +34,8 @@ struct Budgets: View {
                 if vm.budgets.count > 0 {
                     
                     ScrollView(showsIndicators: false) {
+                        // FIXME: - This isn't being created when the view first comes to be
+                        Text(String(vm.budgets.count))
                         
                     }
                     
