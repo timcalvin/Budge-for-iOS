@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B15165582810FFCB00B17AFA /* BudgeModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B15165562810FFCB00B17AFA /* BudgeModel.xcdatamodeld */; };
+		B1C516302812458100BC0FB3 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C5162F2812458100BC0FB3 /* CoreDataManager.swift */; };
+		B1C516322812469800BC0FB3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C516312812469800BC0FB3 /* ViewModel.swift */; };
+		B1C5163428124DA400BC0FB3 /* BudgetListButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C5163328124DA400BC0FB3 /* BudgetListButton.swift */; };
+		B1C516362812548900BC0FB3 /* BudgetSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C516352812548900BC0FB3 /* BudgetSetup.swift */; };
+		B1C5163828134A7E00BC0FB3 /* Bundle-Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C5163728134A7E00BC0FB3 /* Bundle-Decode.swift */; };
+		B1C5163B2813951E00BC0FB3 /* BudgeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C5163A2813951E00BC0FB3 /* BudgeButton.swift */; };
 		B1EE6232280E5B8700B5DFDE /* Budge_CDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE6231280E5B8700B5DFDE /* Budge_CDApp.swift */; };
 		B1EE6234280E5B8700B5DFDE /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE6233280E5B8700B5DFDE /* LaunchView.swift */; };
 		B1EE6236280E5B8800B5DFDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1EE6235280E5B8800B5DFDE /* Assets.xcassets */; };
@@ -23,6 +30,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B15165572810FFCB00B17AFA /* BudgeModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BudgeModel.xcdatamodel; sourceTree = "<group>"; };
+		B1C5162F2812458100BC0FB3 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		B1C516312812469800BC0FB3 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		B1C5163328124DA400BC0FB3 /* BudgetListButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListButton.swift; sourceTree = "<group>"; };
+		B1C516352812548900BC0FB3 /* BudgetSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetSetup.swift; sourceTree = "<group>"; };
+		B1C5163728134A7E00BC0FB3 /* Bundle-Decode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decode.swift"; sourceTree = "<group>"; };
+		B1C5163A2813951E00BC0FB3 /* BudgeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgeButton.swift; sourceTree = "<group>"; };
 		B1EE622E280E5B8700B5DFDE /* Budge-CD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Budge-CD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1EE6231280E5B8700B5DFDE /* Budge_CDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budge_CDApp.swift; sourceTree = "<group>"; };
 		B1EE6233280E5B8700B5DFDE /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
@@ -50,6 +64,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B1C5162E2812454500BC0FB3 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				B15165562810FFCB00B17AFA /* BudgeModel.xcdatamodeld */,
+				B1C5162F2812458100BC0FB3 /* CoreDataManager.swift */,
+				B1C516312812469800BC0FB3 /* ViewModel.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		B1C516392813950F00BC0FB3 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B1C5163A2813951E00BC0FB3 /* BudgeButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		B1EE6225280E5B8700B5DFDE = {
 			isa = PBXGroup;
 			children = (
@@ -73,8 +105,10 @@
 				B1EE623F280F910200B5DFDE /* Views */,
 				B1EE6240280F911400B5DFDE /* ViewModels */,
 				B1EE6241280F912100B5DFDE /* Models */,
+				B1C516392813950F00BC0FB3 /* Components */,
 				B1EE6246280F928E00B5DFDE /* Enums */,
 				B1EE6249280F931600B5DFDE /* Helpers */,
+				B1C5162E2812454500BC0FB3 /* CoreData */,
 				B1EE6258280F975F00B5DFDE /* LocalData */,
 				B1EE6235280E5B8800B5DFDE /* Assets.xcassets */,
 				B1EE6237280E5B8800B5DFDE /* Preview Content */,
@@ -146,6 +180,7 @@
 				B1EE624A280F932C00B5DFDE /* BudgeColors.swift */,
 				B1EE6252280F965200B5DFDE /* HapticsManager.swift */,
 				B1EE6254280F967500B5DFDE /* DismissKeyboard.swift */,
+				B1C5163728134A7E00BC0FB3 /* Bundle-Decode.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -154,6 +189,8 @@
 			isa = PBXGroup;
 			children = (
 				B1EE6250280F942F00B5DFDE /* Budgets.swift */,
+				B1C5163328124DA400BC0FB3 /* BudgetListButton.swift */,
+				B1C516352812548900BC0FB3 /* BudgetSetup.swift */,
 			);
 			path = Budgets;
 			sourceTree = "<group>";
@@ -247,12 +284,19 @@
 			files = (
 				B1EE624F280F941C00B5DFDE /* Settings.swift in Sources */,
 				B1EE6245280F91EA00B5DFDE /* BudgeTabView.swift in Sources */,
+				B1C5163428124DA400BC0FB3 /* BudgetListButton.swift in Sources */,
 				B1EE6255280F967500B5DFDE /* DismissKeyboard.swift in Sources */,
 				B1EE6234280E5B8700B5DFDE /* LaunchView.swift in Sources */,
+				B15165582810FFCB00B17AFA /* BudgeModel.xcdatamodeld in Sources */,
+				B1C5163B2813951E00BC0FB3 /* BudgeButton.swift in Sources */,
 				B1EE624B280F932C00B5DFDE /* BudgeColors.swift in Sources */,
+				B1C516322812469800BC0FB3 /* ViewModel.swift in Sources */,
+				B1C516302812458100BC0FB3 /* CoreDataManager.swift in Sources */,
+				B1C5163828134A7E00BC0FB3 /* Bundle-Decode.swift in Sources */,
 				B1EE6257280F968700B5DFDE /* Constants.swift in Sources */,
 				B1EE6232280E5B8700B5DFDE /* Budge_CDApp.swift in Sources */,
 				B1EE6248280F92B100B5DFDE /* Tabs.swift in Sources */,
+				B1C516362812548900BC0FB3 /* BudgetSetup.swift in Sources */,
 				B1EE6253280F965200B5DFDE /* HapticsManager.swift in Sources */,
 				B1EE6251280F942F00B5DFDE /* Budgets.swift in Sources */,
 			);
@@ -459,6 +503,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B15165562810FFCB00B17AFA /* BudgeModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B15165572810FFCB00B17AFA /* BudgeModel.xcdatamodel */,
+			);
+			currentVersion = B15165572810FFCB00B17AFA /* BudgeModel.xcdatamodel */;
+			path = BudgeModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B1EE6226280E5B8700B5DFDE /* Project object */;
 }

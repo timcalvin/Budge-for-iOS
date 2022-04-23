@@ -12,8 +12,8 @@ struct BudgeTabView: View {
     @State private var currentTab = Tabs.budgets
     
     init() {
-        UITabBar.appearance().backgroundColor = UIColor(BudgeColors.white)
-        UITabBar.appearance().unselectedItemTintColor = UIColor(BudgeColors.lightGray)
+        UITabBar.appearance().backgroundColor = UIColor(.white)
+        UITabBar.appearance().unselectedItemTintColor = UIColor(.budgeLightGray)
     }
     
     var body: some View {
@@ -35,7 +35,7 @@ struct BudgeTabView: View {
                 .tag(Tabs.settings)
             
         }
-        .accentColor(BudgeColors.darkGray)
+        .accentColor(.budgeDarkGray)
         
     }
 }
