@@ -35,8 +35,27 @@ struct Budgets: View {
                     
                     ScrollView(showsIndicators: false) {
                         // FIXME: - This isn't being created when the view first comes to be
-                        Text(String(vm.budgets.count))
-                        
+                        LazyVGrid(columns: layout, spacing: 20) {
+                            ForEach(vm.budgets) { budget in
+                                // TODO: - Sorting
+                                NavigationLink {
+                                    BudgetDetail(vm: vm, budget: budget)
+                                } label: {
+                                    BudgetListButton(vm: vm, budget: budget)
+                                }
+                            }
+                            .padding(.bottom)
+                            
+                            Button {
+                                showingBudgetDetail = true
+                            } label: {
+                                BudgetListButton(vm: vm, budget: nil)
+                            }
+                            .sheet(isPresented: $showingBudgetDetail) {
+                                BudgetSetup(vm: vm)
+                            }
+                        }
+                        .padding(.horizontal)
                     }
                     
                 } else {
@@ -47,10 +66,11 @@ struct Budgets: View {
                         Button {
                             showingBudgetDetail = true
                         } label: {
-                            BudgetListButton(vm: vm, budget: nil, frameSize: 128)
+                            // FIXME: - I want 120 frameSize
+                            BudgetListButton(vm: vm, budget: nil)
                         }
                         .sheet(isPresented: $showingBudgetDetail) {
-                            BudgetSetup(vm: vm, budget: nil)
+                            BudgetSetup(vm: vm)
                         }
                         Spacer()
                     }
@@ -58,6 +78,10 @@ struct Budgets: View {
                 }
             }
         }
+        .onAppear {
+            vm.getBudgets()
+        }
+        .preferredColorScheme(.dark)
     }
 }
 

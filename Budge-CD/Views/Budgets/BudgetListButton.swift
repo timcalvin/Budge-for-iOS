@@ -11,22 +11,22 @@ struct BudgetListButton: View {
     
     @ObservedObject var vm: ViewModel
     let budget: Budget?
-    let frameSize: CGFloat?
+    let frameSize: CGFloat = 90
     
     var body: some View {
         VStack {
             ZStack {
                 Circle()
                     .foregroundColor(vm.iconColor(fromBudgetColor: budget?.themeColor ?? "default"))
-                    .frame(width: frameSize ?? 90, height: frameSize ?? 90)
+                    .frame(width: frameSize, height: frameSize)
                 Image(systemName: budget?.icon ?? "plus")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: (frameSize ?? 90)/2, height: (frameSize ?? 90)/2)
+                    .frame(width: frameSize/2, height: frameSize/2)
                     .foregroundColor(budget == nil ? .budgeBlue : (budget?.themeColor == "default" ? .budgeBlue : .white))
             }
             .padding(.bottom, 10)
-            Text(budget?.name ?? "Oh no, this looks empty!\nLet's add your first list.")
+            Text(budget?.name ?? (vm.budgets.count > 0 ? "New Budget" : "Oh no, this looks empty!\nLet's add your first list."))
                 .bold()
                 .multilineTextAlignment(.center)
                 .foregroundColor(.white)

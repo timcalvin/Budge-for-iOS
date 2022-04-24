@@ -14,6 +14,7 @@
 		B1C516362812548900BC0FB3 /* BudgetSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C516352812548900BC0FB3 /* BudgetSetup.swift */; };
 		B1C5163828134A7E00BC0FB3 /* Bundle-Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C5163728134A7E00BC0FB3 /* Bundle-Decode.swift */; };
 		B1C5163B2813951E00BC0FB3 /* BudgeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C5163A2813951E00BC0FB3 /* BudgeButton.swift */; };
+		B1C5163E2814F46700BC0FB3 /* BudgetDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C5163D2814F46700BC0FB3 /* BudgetDetail.swift */; };
 		B1EE6232280E5B8700B5DFDE /* Budge_CDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE6231280E5B8700B5DFDE /* Budge_CDApp.swift */; };
 		B1EE6234280E5B8700B5DFDE /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE6233280E5B8700B5DFDE /* LaunchView.swift */; };
 		B1EE6236280E5B8800B5DFDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1EE6235280E5B8800B5DFDE /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 		B1C516352812548900BC0FB3 /* BudgetSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetSetup.swift; sourceTree = "<group>"; };
 		B1C5163728134A7E00BC0FB3 /* Bundle-Decode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decode.swift"; sourceTree = "<group>"; };
 		B1C5163A2813951E00BC0FB3 /* BudgeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgeButton.swift; sourceTree = "<group>"; };
+		B1C5163D2814F46700BC0FB3 /* BudgetDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetail.swift; sourceTree = "<group>"; };
 		B1EE622E280E5B8700B5DFDE /* Budge-CD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Budge-CD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1EE6231280E5B8700B5DFDE /* Budge_CDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budge_CDApp.swift; sourceTree = "<group>"; };
 		B1EE6233280E5B8700B5DFDE /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
@@ -80,6 +82,14 @@
 				B1C5163A2813951E00BC0FB3 /* BudgeButton.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		B1C5163C2814F30400BC0FB3 /* BudgetDetail */ = {
+			isa = PBXGroup;
+			children = (
+				B1C5163D2814F46700BC0FB3 /* BudgetDetail.swift */,
+			);
+			path = BudgetDetail;
 			sourceTree = "<group>";
 		};
 		B1EE6225280E5B8700B5DFDE = {
@@ -129,6 +139,7 @@
 				B1EE6242280F915700B5DFDE /* Launch */,
 				B1EE6243280F91B300B5DFDE /* TabView */,
 				B1EE624C280F93F100B5DFDE /* Budgets */,
+				B1C5163C2814F30400BC0FB3 /* BudgetDetail */,
 				B1EE624D280F940100B5DFDE /* Settings */,
 			);
 			path = Views;
@@ -277,6 +288,7 @@
 				B1EE624F280F941C00B5DFDE /* Settings.swift in Sources */,
 				B1EE6245280F91EA00B5DFDE /* BudgeTabView.swift in Sources */,
 				B1C5163428124DA400BC0FB3 /* BudgetListButton.swift in Sources */,
+				B1C5163E2814F46700BC0FB3 /* BudgetDetail.swift in Sources */,
 				B1EE6255280F967500B5DFDE /* DismissKeyboard.swift in Sources */,
 				B1EE6234280E5B8700B5DFDE /* LaunchView.swift in Sources */,
 				B15165582810FFCB00B17AFA /* BudgeModel.xcdatamodeld in Sources */,
