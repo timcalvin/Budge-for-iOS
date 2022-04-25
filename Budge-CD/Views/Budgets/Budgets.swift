@@ -81,8 +81,9 @@ struct Budgets: View {
         .onAppear {
             vm.getBudgets()
         }
-        .preferredColorScheme(.dark)
+//        .preferredColorScheme(.dark)
     }
+
 }
 
 struct Budgets_Previews: PreviewProvider {

@@ -18,11 +18,12 @@ struct BudgetSetup: View {
     
     // TextFields
     @State private var budgetNameText = ""
-    @State private var budgetValue: Double = 0 {
-        didSet {
-            budgetValue = budgetValue / 100
-        }
-    }
+    @State private var budgetValue: Double = 0 //{
+        // FIXME: -
+//        didSet {
+//            budgetValue = budgetValue / 100
+//        }
+//    }
     
     // UI
     @FocusState var valueIsFocused: Bool
@@ -58,7 +59,13 @@ struct BudgetSetup: View {
                     Spacer()
                     
                     Button {
-                        vm.addBudget(name: budgetNameText, value: budgetValue, icon: icon, themeColor: iconColorName)
+                        if budget == nil {
+                            vm.addBudget(name: budgetNameText, value: budgetValue, icon: icon, themeColor: iconColorName)
+                        } else {
+                            if let budget = budget {
+                                vm.updateBudget(budget: budget, name: budgetNameText, value: budgetValue, icon: icon, themeColor: iconColorName)
+                            }
+                        }
                         presentationMode.wrappedValue.dismiss()
                     } label: {
                         Text("Done")

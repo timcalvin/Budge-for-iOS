@@ -41,8 +41,13 @@ class ViewModel: ObservableObject {
     }
     
     /// Update budget
-    func updateBudget() {
-        
+    func updateBudget(budget: Budget, name: String, value: Double = 0, icon: String = "list.bullet", themeColor: String = "default") {
+        let budget = budget
+        budget.name = name
+        budget.value = value
+        budget.icon = icon
+        budget.themeColor = themeColor
+        save()
     }
     
     /// Delete budget

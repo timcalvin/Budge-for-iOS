@@ -11,3 +11,8 @@ enum Tabs {
     case budgets
     case settings
 }
+
+enum BudgetDetailTab {
+    case list
+    case cart
+}

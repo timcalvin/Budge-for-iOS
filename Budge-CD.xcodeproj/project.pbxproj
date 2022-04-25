@@ -20,7 +20,7 @@
 		B1EE6236280E5B8800B5DFDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1EE6235280E5B8800B5DFDE /* Assets.xcassets */; };
 		B1EE6239280E5B8800B5DFDE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1EE6238280E5B8800B5DFDE /* Preview Assets.xcassets */; };
 		B1EE6245280F91EA00B5DFDE /* BudgeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE6244280F91EA00B5DFDE /* BudgeTabView.swift */; };
-		B1EE6248280F92B100B5DFDE /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE6247280F92B100B5DFDE /* Tabs.swift */; };
+		B1EE6248280F92B100B5DFDE /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE6247280F92B100B5DFDE /* Enums.swift */; };
 		B1EE624B280F932C00B5DFDE /* BudgeColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE624A280F932C00B5DFDE /* BudgeColors.swift */; };
 		B1EE624F280F941C00B5DFDE /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE624E280F941C00B5DFDE /* Settings.swift */; };
 		B1EE6251280F942F00B5DFDE /* Budgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE6250280F942F00B5DFDE /* Budgets.swift */; };
@@ -28,6 +28,8 @@
 		B1EE6255280F967500B5DFDE /* DismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE6254280F967500B5DFDE /* DismissKeyboard.swift */; };
 		B1EE6257280F968700B5DFDE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE6256280F968700B5DFDE /* Constants.swift */; };
 		B1EE625A280F978700B5DFDE /* symbols.json in Resources */ = {isa = PBXBuildFile; fileRef = B1EE6259280F978700B5DFDE /* symbols.json */; };
+		B1F3C8D3281632E8008EDCFF /* BudgetDetailList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F3C8D2281632E8008EDCFF /* BudgetDetailList.swift */; };
+		B1F3C8D5281632F1008EDCFF /* BudgetDetailCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F3C8D4281632F1008EDCFF /* BudgetDetailCart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +47,7 @@
 		B1EE6235280E5B8800B5DFDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1EE6238280E5B8800B5DFDE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B1EE6244280F91EA00B5DFDE /* BudgeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgeTabView.swift; sourceTree = "<group>"; };
-		B1EE6247280F92B100B5DFDE /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
+		B1EE6247280F92B100B5DFDE /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		B1EE624A280F932C00B5DFDE /* BudgeColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgeColors.swift; sourceTree = "<group>"; };
 		B1EE624E280F941C00B5DFDE /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		B1EE6250280F942F00B5DFDE /* Budgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budgets.swift; sourceTree = "<group>"; };
@@ -53,6 +55,8 @@
 		B1EE6254280F967500B5DFDE /* DismissKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissKeyboard.swift; sourceTree = "<group>"; };
 		B1EE6256280F968700B5DFDE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B1EE6259280F978700B5DFDE /* symbols.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = symbols.json; sourceTree = "<group>"; };
+		B1F3C8D2281632E8008EDCFF /* BudgetDetailList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailList.swift; sourceTree = "<group>"; };
+		B1F3C8D4281632F1008EDCFF /* BudgetDetailCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailCart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,8 @@
 			isa = PBXGroup;
 			children = (
 				B1C5163D2814F46700BC0FB3 /* BudgetDetail.swift */,
+				B1F3C8D2281632E8008EDCFF /* BudgetDetailList.swift */,
+				B1F3C8D4281632F1008EDCFF /* BudgetDetailCart.swift */,
 			);
 			path = BudgetDetail;
 			sourceTree = "<group>";
@@ -171,7 +177,7 @@
 		B1EE6246280F928E00B5DFDE /* Enums */ = {
 			isa = PBXGroup;
 			children = (
-				B1EE6247280F92B100B5DFDE /* Tabs.swift */,
+				B1EE6247280F92B100B5DFDE /* Enums.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -287,6 +293,7 @@
 			files = (
 				B1EE624F280F941C00B5DFDE /* Settings.swift in Sources */,
 				B1EE6245280F91EA00B5DFDE /* BudgeTabView.swift in Sources */,
+				B1F3C8D3281632E8008EDCFF /* BudgetDetailList.swift in Sources */,
 				B1C5163428124DA400BC0FB3 /* BudgetListButton.swift in Sources */,
 				B1C5163E2814F46700BC0FB3 /* BudgetDetail.swift in Sources */,
 				B1EE6255280F967500B5DFDE /* DismissKeyboard.swift in Sources */,
@@ -297,9 +304,10 @@
 				B1C516322812469800BC0FB3 /* ViewModel.swift in Sources */,
 				B1C516302812458100BC0FB3 /* CoreDataManager.swift in Sources */,
 				B1C5163828134A7E00BC0FB3 /* Bundle-Decode.swift in Sources */,
+				B1F3C8D5281632F1008EDCFF /* BudgetDetailCart.swift in Sources */,
 				B1EE6257280F968700B5DFDE /* Constants.swift in Sources */,
 				B1EE6232280E5B8700B5DFDE /* Budge_CDApp.swift in Sources */,
-				B1EE6248280F92B100B5DFDE /* Tabs.swift in Sources */,
+				B1EE6248280F92B100B5DFDE /* Enums.swift in Sources */,
 				B1C516362812548900BC0FB3 /* BudgetSetup.swift in Sources */,
 				B1EE6253280F965200B5DFDE /* HapticsManager.swift in Sources */,
 				B1EE6251280F942F00B5DFDE /* Budgets.swift in Sources */,
