@@ -36,7 +36,7 @@ struct BudgetDetailCart: View {
                     ForEach(budget.itemsArray) { item in
                         // TODO: - Add sorting (see old project or use predicate)
                         if item.isInCart {
-//                            BudgetDetailCartCell(vm: vm, budget: budget, item: item)
+                            BudgetDetailCartCell(vm: vm, budget: budget, item: item)
                         }
                     }
                 }
@@ -47,8 +47,8 @@ struct BudgetDetailCart: View {
                     Text("\(budget.unwrappedName) cart subtotal: ")
                         .bold()
                         .foregroundColor(.budgeDarkGray)
-                    if let cartSubtotal = vm.getCartSubtotal(budget: budget) {
-                        Text(cartSubtotal, format: Constants.currencyFormat)
+                    if budget.cartValue != 0 {
+                        Text(budget.cartValue, format: Constants.currencyFormat)
                             .bold()
                             .foregroundColor(.red)
                             .frame(width: 70)
@@ -105,12 +105,12 @@ struct BudgetDetailCart: View {
                             .bold()
                             .foregroundColor(.budgeDarkGray)
                         
-                        if let cartTotal = vm.getCartTotal(budget: budget, adjustment: adjustTotalValue, shouldAdjustUp: shouldAdjustUp) {
-                            Text(cartTotal, format: Constants.currencyFormat)
+                        
+                        Text(budget.cartValue + (shouldAdjustUp ? adjustTotalValue : adjustTotalValue * -1), format: Constants.currencyFormat)
                             .bold()
                             .foregroundColor(.red)
                             .frame(width: 70)
-                        }
+                        
                         ComponentLabel(image: "circle")
                             .foregroundColor(.white)
                     }

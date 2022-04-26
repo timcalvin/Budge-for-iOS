@@ -11,6 +11,7 @@
 		B11A756628177E55007A2D0C /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11A756228177E55007A2D0C /* Item+CoreDataProperties.swift */; };
 		B11A756728177E55007A2D0C /* Budget+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11A756328177E55007A2D0C /* Budget+CoreDataClass.swift */; };
 		B11A756828177E55007A2D0C /* Budget+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11A756428177E55007A2D0C /* Budget+CoreDataProperties.swift */; };
+		B11A756A2818762A007A2D0C /* BudgetDetailCartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11A75692818762A007A2D0C /* BudgetDetailCartCell.swift */; };
 		B15165582810FFCB00B17AFA /* BudgeModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B15165562810FFCB00B17AFA /* BudgeModel.xcdatamodeld */; };
 		B1C516302812458100BC0FB3 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C5162F2812458100BC0FB3 /* CoreDataManager.swift */; };
 		B1C516322812469800BC0FB3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C516312812469800BC0FB3 /* ViewModel.swift */; };
@@ -43,6 +44,7 @@
 		B11A756228177E55007A2D0C /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B11A756328177E55007A2D0C /* Budget+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Budget+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B11A756428177E55007A2D0C /* Budget+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Budget+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B11A75692818762A007A2D0C /* BudgetDetailCartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailCartCell.swift; sourceTree = "<group>"; };
 		B15165572810FFCB00B17AFA /* BudgeModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BudgeModel.xcdatamodel; sourceTree = "<group>"; };
 		B1C5162F2812458100BC0FB3 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		B1C516312812469800BC0FB3 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				B1F3C8D2281632E8008EDCFF /* BudgetDetailList.swift */,
 				B1F3C8D62817316C008EDCFF /* BudgetDetailListCell.swift */,
 				B1F3C8D4281632F1008EDCFF /* BudgetDetailCart.swift */,
+				B11A75692818762A007A2D0C /* BudgetDetailCartCell.swift */,
 			);
 			path = BudgetDetail;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				B11A756628177E55007A2D0C /* Item+CoreDataProperties.swift in Sources */,
 				B1EE6232280E5B8700B5DFDE /* Budge_CDApp.swift in Sources */,
 				B1EE6248280F92B100B5DFDE /* Enums.swift in Sources */,
+				B11A756A2818762A007A2D0C /* BudgetDetailCartCell.swift in Sources */,
 				B1C516362812548900BC0FB3 /* BudgetSetup.swift in Sources */,
 				B1EE6253280F965200B5DFDE /* HapticsManager.swift in Sources */,
 				B1EE6251280F942F00B5DFDE /* Budgets.swift in Sources */,

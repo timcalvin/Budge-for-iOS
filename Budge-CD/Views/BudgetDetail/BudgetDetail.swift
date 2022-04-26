@@ -40,7 +40,7 @@ struct BudgetDetail: View {
                     .foregroundColor(budgetColor)
                     .ignoresSafeArea(edges: .top)
                 HStack {
-                    Text(budget.value, format: Constants.currencyFormat)
+                    Text(budget.value - budget.cartValue, format: Constants.currencyFormat)
                         .bold()
                         .foregroundColor(headlineColor)
                         .font(.title)

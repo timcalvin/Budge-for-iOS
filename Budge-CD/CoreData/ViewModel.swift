@@ -107,9 +107,9 @@ class ViewModel: ObservableObject {
         getBudgets()
     }
     
-    func itemTotal(value: Double, quantity: Double, coupon: Double, isTaxable: Bool) -> Double {
-        var itemTotal = (value * quantity) - coupon
-        if isTaxable {
+    func itemTotal(item: Item) -> Double {
+        var itemTotal = (item.value * item.quantity) - item.couponValue
+        if item.isTaxable {
             // FIXME: - Don't hard code tax rate once options are open
             let taxRate: Double = 6 / 100
             let tax = itemTotal * taxRate
@@ -128,25 +128,39 @@ class ViewModel: ObservableObject {
         
     }
     
-    func getCartSubtotal(budget: Budget) -> Double {
-        var total = 0.0
-        for item in budget.itemsArray {
-            if item.isInCart {
-                total += item.itemTotal
-            }
+    func updateBudgetCartValue(budget: Budget, itemValue value: Double, addingToCart: Bool) {
+        let updateBudget = budget
+        var currentCartValue = budget.cartValue
+        if addingToCart {
+            currentCartValue += value
+        } else {
+            currentCartValue -= value
         }
-        return total
+        updateBudget.cartValue = currentCartValue
+        save()
     }
     
-    func getCartTotal(budget: Budget, adjustment: Double, shouldAdjustUp: Bool) -> Double {
-        var total = getCartSubtotal(budget: budget)
-        if shouldAdjustUp {
-            total += adjustment
-        } else {
-            total -= adjustment
-        }
-        return total
-    }
+    // TODO: - Do I need this or need to change it?
+//    func getCartSubtotal(budget: Budget) -> Double {
+//        var total = 0.0
+//        for item in budget.itemsArray {
+//            if item.isInCart {
+//                total += item.itemTotal
+//            }
+//        }
+//        return total
+//    }
+    
+    // TODO: - Do I need this or need to change it?
+//    func getCartTotal(budget: Budget, adjustment: Double, shouldAdjustUp: Bool) -> Double {
+//        var total = getCartSubtotal(budget: budget)
+//        if shouldAdjustUp {
+//            total += adjustment
+//        } else {
+//            total -= adjustment
+//        }
+//        return total
+//    }
     
     func getNumberOfItemsInCart(budget: Budget) -> Int {
         var total = 0
@@ -161,9 +175,12 @@ class ViewModel: ObservableObject {
     func emptyCart(fromBudget budget: Budget) {
         for item in budget.itemsArray {
             if item.isInCart {
+                // TODO: - remove itemTotal from budget
                 deleteItem(item: item)
             }
         }
+        budget.value -= budget.cartValue
+        budget.cartValue = 0
     }
     
     func iconColor(fromBudgetColor color: String) -> Color {

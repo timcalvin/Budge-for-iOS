@@ -146,13 +146,20 @@ struct BudgetDetailListCell: View {
                                     HapticManager.instance.notification(type: .warning)
                                     showingPriceAlert = true
                                 } else {
-                                    let itemTotal = vm.itemTotal(value: item.value, quantity: item.quantity, coupon: item.couponValue, isTaxable: item.isTaxable)
                                     
-                                    vm.updateItem(item, inBudget: budget, name: item.name ?? "", quantity: item.quantity, value: item.value, isTaxable: item.isTaxable, couponValue: itemCouponValue, isInCart: true, itemTotal: itemTotal)
-                                    
-                                    vm.updateBudgetValue(budget: budget, newValue: budget.value - itemTotal)
-                                    
-                                    HapticManager.instance.notification(type: .success)
+                                    withAnimation {
+                                        // Calculate item total
+                                        let itemTotal = vm.itemTotal(item: item)
+                                        
+                                        // Update item total and add it to the cart
+                                        vm.updateItem(item, inBudget: budget, name: item.name ?? "", quantity: item.quantity, value: item.value, isTaxable: item.isTaxable, couponValue: itemCouponValue, isInCart: true, itemTotal: itemTotal)
+                                        
+                                        // Update the budgets cart total
+                                        vm.updateBudgetCartValue(budget: budget, itemValue: itemTotal, addingToCart: true)
+                                        
+                                        HapticManager.instance.notification(type: .success)
+                                    }
+
                                 }
                             } label: {
                                 ComponentLabel(image: "cart.circle")
