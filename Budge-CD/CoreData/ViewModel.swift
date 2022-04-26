@@ -56,10 +56,114 @@ class ViewModel: ObservableObject {
         save()
     }
     
+//    /// Get all items and store in items array of budgets property
+//    func getItems() {
+//
+//    }
+    
+    /// Add new item
+    func addItem(toBudget budget: Budget, withName name: String) {
+        guard name.count > 0 else {
+            print("Item name is too short")
+            return
+        }
+        
+        let newItem = Item(context: manager.context)
+        newItem.budget = budget
+        newItem.name = name
+        newItem.quantity = 1.0
+        newItem.value = 0
+        newItem.isTaxable = false
+        newItem.couponValue = 0
+        newItem.isInCart = false
+        newItem.timestamp = Date()
+        save()
+    }
+    
+    /// Update item
+    func updateItem(_ item: Item, inBudget budget: Budget, name: String, quantity: Double, value: Double, isTaxable: Bool, couponValue: Double, isInCart: Bool, itemTotal: Double = 0) {
+        
+        let updateItem = item
+        updateItem.name = name
+        updateItem.budget = budget
+        updateItem.quantity = quantity
+        updateItem.value = value
+        updateItem.isTaxable = isTaxable
+        updateItem.couponValue = couponValue
+        updateItem.isInCart = isInCart
+        updateItem.itemTotal = itemTotal
+        save()
+    }
+    
+    /// Delete item
+    func deleteItem(item: Item) {
+        manager.context.delete(item)
+        save()
+    }
+    
     /// Save the current context to Core Data
     func save() {
         manager.save()
         getBudgets()
+    }
+    
+    func itemTotal(value: Double, quantity: Double, coupon: Double, isTaxable: Bool) -> Double {
+        var itemTotal = (value * quantity) - coupon
+        if isTaxable {
+            // FIXME: - Don't hard code tax rate once options are open
+            let taxRate: Double = 6 / 100
+            let tax = itemTotal * taxRate
+            itemTotal += tax
+            let roundedValue = round(itemTotal * 100) / 100.0
+            itemTotal = roundedValue
+        }
+        return itemTotal
+    }
+    
+    func updateBudgetValue(budget: Budget, newValue value: Double) {
+        
+        let updateBudget = budget
+        updateBudget.value = value
+        save()
+        
+    }
+    
+    func getCartSubtotal(budget: Budget) -> Double {
+        var total = 0.0
+        for item in budget.itemsArray {
+            if item.isInCart {
+                total += item.itemTotal
+            }
+        }
+        return total
+    }
+    
+    func getCartTotal(budget: Budget, adjustment: Double, shouldAdjustUp: Bool) -> Double {
+        var total = getCartSubtotal(budget: budget)
+        if shouldAdjustUp {
+            total += adjustment
+        } else {
+            total -= adjustment
+        }
+        return total
+    }
+    
+    func getNumberOfItemsInCart(budget: Budget) -> Int {
+        var total = 0
+        for item in budget.itemsArray {
+            if item.isInCart {
+                total += 1
+            }
+        }
+        return total
+    }
+    
+    func emptyCart(fromBudget budget: Budget) {
+        for item in budget.itemsArray {
+            if item.isInCart {
+                deleteItem(item: item)
+            }
+        }
     }
     
     func iconColor(fromBudgetColor color: String) -> Color {

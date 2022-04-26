@@ -22,7 +22,7 @@ struct BudgetDetail: View {
     @State private var showingBudgetDetailSort = false
     
     var budgetColor: Color {
-        let color = vm.iconColor(fromBudgetColor: budget.themeColor ?? "default")
+        let color = vm.iconColor(fromBudgetColor: budget.unwrappedThemeColor)
         return color == .white ? .budgeBlue : color
     }
     

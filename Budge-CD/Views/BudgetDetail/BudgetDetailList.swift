@@ -17,7 +17,7 @@ struct BudgetDetailList: View {
     var budget: Budget
     
     var budgetColor: Color {
-        let color = vm.iconColor(fromBudgetColor: budget.themeColor ?? "default")
+        let color = vm.iconColor(fromBudgetColor: budget.unwrappedThemeColor)
         return color == .white ? .budgeBlue : color
     }
     
@@ -27,8 +27,13 @@ struct BudgetDetailList: View {
     var body: some View {
         ScrollView {
             LazyVStack(alignment: .leading) {
-                if budget.items?.count ?? 0 > 0 {
-                    // TODO: - Display Items
+                if budget.itemsArray.count > 0 {
+                    // TODO: - Add some sorting (refer to old project)
+                    ForEach(budget.itemsArray) { item in
+                        if !item.isInCart {
+                            BudgetDetailListCell(vm: vm, budget: budget, item: item)
+                        }
+                    }
                 }
                 
                 HStack {
@@ -43,7 +48,7 @@ struct BudgetDetailList: View {
                         .autocapitalization(.words)
                         .onSubmit {
                             withAnimation {
-                                // TODO: - persist item
+                                vm.addItem(toBudget: budget, withName: newItemText)
                                 newItemText = ""
                                 newItemIsFocused = true
                             }

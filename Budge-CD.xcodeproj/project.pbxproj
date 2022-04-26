@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B11A756528177E55007A2D0C /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11A756128177E55007A2D0C /* Item+CoreDataClass.swift */; };
+		B11A756628177E55007A2D0C /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11A756228177E55007A2D0C /* Item+CoreDataProperties.swift */; };
+		B11A756728177E55007A2D0C /* Budget+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11A756328177E55007A2D0C /* Budget+CoreDataClass.swift */; };
+		B11A756828177E55007A2D0C /* Budget+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11A756428177E55007A2D0C /* Budget+CoreDataProperties.swift */; };
 		B15165582810FFCB00B17AFA /* BudgeModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B15165562810FFCB00B17AFA /* BudgeModel.xcdatamodeld */; };
 		B1C516302812458100BC0FB3 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C5162F2812458100BC0FB3 /* CoreDataManager.swift */; };
 		B1C516322812469800BC0FB3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C516312812469800BC0FB3 /* ViewModel.swift */; };
@@ -30,9 +34,15 @@
 		B1EE625A280F978700B5DFDE /* symbols.json in Resources */ = {isa = PBXBuildFile; fileRef = B1EE6259280F978700B5DFDE /* symbols.json */; };
 		B1F3C8D3281632E8008EDCFF /* BudgetDetailList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F3C8D2281632E8008EDCFF /* BudgetDetailList.swift */; };
 		B1F3C8D5281632F1008EDCFF /* BudgetDetailCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F3C8D4281632F1008EDCFF /* BudgetDetailCart.swift */; };
+		B1F3C8D72817316C008EDCFF /* BudgetDetailListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F3C8D62817316C008EDCFF /* BudgetDetailListCell.swift */; };
+		B1F3C8D928173A8A008EDCFF /* ComponentLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F3C8D828173A8A008EDCFF /* ComponentLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B11A756128177E55007A2D0C /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B11A756228177E55007A2D0C /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B11A756328177E55007A2D0C /* Budget+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Budget+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B11A756428177E55007A2D0C /* Budget+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Budget+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B15165572810FFCB00B17AFA /* BudgeModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BudgeModel.xcdatamodel; sourceTree = "<group>"; };
 		B1C5162F2812458100BC0FB3 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		B1C516312812469800BC0FB3 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
@@ -57,6 +67,8 @@
 		B1EE6259280F978700B5DFDE /* symbols.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = symbols.json; sourceTree = "<group>"; };
 		B1F3C8D2281632E8008EDCFF /* BudgetDetailList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailList.swift; sourceTree = "<group>"; };
 		B1F3C8D4281632F1008EDCFF /* BudgetDetailCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailCart.swift; sourceTree = "<group>"; };
+		B1F3C8D62817316C008EDCFF /* BudgetDetailListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailListCell.swift; sourceTree = "<group>"; };
+		B1F3C8D828173A8A008EDCFF /* ComponentLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +85,10 @@
 		B1C5162E2812454500BC0FB3 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				B11A756128177E55007A2D0C /* Item+CoreDataClass.swift */,
+				B11A756228177E55007A2D0C /* Item+CoreDataProperties.swift */,
+				B11A756328177E55007A2D0C /* Budget+CoreDataClass.swift */,
+				B11A756428177E55007A2D0C /* Budget+CoreDataProperties.swift */,
 				B15165562810FFCB00B17AFA /* BudgeModel.xcdatamodeld */,
 				B1C5162F2812458100BC0FB3 /* CoreDataManager.swift */,
 				B1C516312812469800BC0FB3 /* ViewModel.swift */,
@@ -84,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				B1C5163A2813951E00BC0FB3 /* BudgeButton.swift */,
+				B1F3C8D828173A8A008EDCFF /* ComponentLabel.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -93,6 +110,7 @@
 			children = (
 				B1C5163D2814F46700BC0FB3 /* BudgetDetail.swift */,
 				B1F3C8D2281632E8008EDCFF /* BudgetDetailList.swift */,
+				B1F3C8D62817316C008EDCFF /* BudgetDetailListCell.swift */,
 				B1F3C8D4281632F1008EDCFF /* BudgetDetailCart.swift */,
 			);
 			path = BudgetDetail;
@@ -119,11 +137,10 @@
 			children = (
 				B1EE6231280E5B8700B5DFDE /* Budge_CDApp.swift */,
 				B1EE623F280F910200B5DFDE /* Views */,
-				B1EE6241280F912100B5DFDE /* Models */,
+				B1C5162E2812454500BC0FB3 /* CoreData */,
 				B1C516392813950F00BC0FB3 /* Components */,
 				B1EE6246280F928E00B5DFDE /* Enums */,
 				B1EE6249280F931600B5DFDE /* Helpers */,
-				B1C5162E2812454500BC0FB3 /* CoreData */,
 				B1EE6258280F975F00B5DFDE /* LocalData */,
 				B1EE6235280E5B8800B5DFDE /* Assets.xcassets */,
 				B1EE6237280E5B8800B5DFDE /* Preview Content */,
@@ -149,13 +166,6 @@
 				B1EE624D280F940100B5DFDE /* Settings */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		B1EE6241280F912100B5DFDE /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		B1EE6242280F915700B5DFDE /* Launch */ = {
@@ -299,13 +309,19 @@
 				B1EE6255280F967500B5DFDE /* DismissKeyboard.swift in Sources */,
 				B1EE6234280E5B8700B5DFDE /* LaunchView.swift in Sources */,
 				B15165582810FFCB00B17AFA /* BudgeModel.xcdatamodeld in Sources */,
+				B1F3C8D928173A8A008EDCFF /* ComponentLabel.swift in Sources */,
 				B1C5163B2813951E00BC0FB3 /* BudgeButton.swift in Sources */,
 				B1EE624B280F932C00B5DFDE /* BudgeColors.swift in Sources */,
 				B1C516322812469800BC0FB3 /* ViewModel.swift in Sources */,
+				B11A756528177E55007A2D0C /* Item+CoreDataClass.swift in Sources */,
+				B11A756728177E55007A2D0C /* Budget+CoreDataClass.swift in Sources */,
+				B11A756828177E55007A2D0C /* Budget+CoreDataProperties.swift in Sources */,
+				B1F3C8D72817316C008EDCFF /* BudgetDetailListCell.swift in Sources */,
 				B1C516302812458100BC0FB3 /* CoreDataManager.swift in Sources */,
 				B1C5163828134A7E00BC0FB3 /* Bundle-Decode.swift in Sources */,
 				B1F3C8D5281632F1008EDCFF /* BudgetDetailCart.swift in Sources */,
 				B1EE6257280F968700B5DFDE /* Constants.swift in Sources */,
+				B11A756628177E55007A2D0C /* Item+CoreDataProperties.swift in Sources */,
 				B1EE6232280E5B8700B5DFDE /* Budge_CDApp.swift in Sources */,
 				B1EE6248280F92B100B5DFDE /* Enums.swift in Sources */,
 				B1C516362812548900BC0FB3 /* BudgetSetup.swift in Sources */,
