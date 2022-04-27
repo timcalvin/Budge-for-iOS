@@ -26,7 +26,6 @@ struct BudgetDetailCart: View {
     @State private var showingAdjustTotal = false
     @State private var adjustTotalValue = 0.0
     @State private var shouldAdjustUp = true
-//    @State private var currentBudget = 0.0
     
     var body: some View {
         ScrollView {
@@ -82,11 +81,10 @@ struct BudgetDetailCart: View {
                             .multilineTextAlignment(.trailing)
                             .padding(.trailing, 6)
                             .onChange(of: adjustTotalValue) { adjustment in
-                                vm.updateBudgetValue(budget: budget, newValue: shouldAdjustUp ? budget.value + adjustment : budget.value - adjustment)
+                                vm.updateBudgetCartAdjustment(budget: budget, adjustment: adjustTotalValue)
                             }
                         Button {
                             shouldAdjustUp.toggle()
-                            vm.updateBudgetValue(budget: budget, newValue: shouldAdjustUp ? budget.value + adjustTotalValue : budget.value - adjustTotalValue)
                         } label: {
                             if shouldAdjustUp {
                                 ComponentLabel(image: "plus.circle.fill")
@@ -106,7 +104,7 @@ struct BudgetDetailCart: View {
                             .foregroundColor(.budgeDarkGray)
                         
                         
-                        Text(budget.cartValue + (shouldAdjustUp ? adjustTotalValue : adjustTotalValue * -1), format: Constants.currencyFormat)
+                        Text(budget.cartValue + (shouldAdjustUp ? budget.cartAdjustment : budget.cartAdjustment * -1), format: Constants.currencyFormat)
                             .bold()
                             .foregroundColor(.red)
                             .frame(width: 70)
@@ -139,8 +137,7 @@ struct BudgetDetailCart: View {
             .alert("Empty Cart", isPresented: $showingEmptyCartConfirmation) {
                 Button("Cancel", role: .cancel) { }
                 Button("Empty", role: .destructive) {
-                    vm.emptyCart(fromBudget: budget)
-    //                currentBudget = budget.budget
+                    vm.emptyCart(fromBudget: budget, adjustment: shouldAdjustUp ? budget.cartAdjustment : budget.cartAdjustment * -1)
                     adjustTotalValue = 0
                     HapticManager.instance.notification(type: .success)
                 }
@@ -152,6 +149,9 @@ struct BudgetDetailCart: View {
             } message: {
                 Text("Your cart is already empty. There are no items to remove.")
             }
+            .onAppear(perform: {
+                adjustTotalValue = budget.cartAdjustment
+            })
             .padding(.horizontal)
         }
     }

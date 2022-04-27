@@ -30,11 +30,6 @@ struct BudgetDetailCartCell: View {
     @State private var couponIsFocused = false
     
     @State private var itemNameText = ""
-    @State private var itemValue = 0.0
-    @State private var itemQuantity = 1.0
-    @State private var itemIsTaxableToggle = false
-    @State private var itemCouponValue = 0.0
-    @State private var itemTotal = 0.0
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -56,14 +51,14 @@ struct BudgetDetailCartCell: View {
                 
                 TextField("Item Name", text: $itemNameText, prompt: Text("enter item name..."))
                     .foregroundColor(.budgeDarkGray)
-                    .onChange(of: itemNameText) { newValue in
-                        vm.updateItem(item, inBudget: budget, name: newValue, quantity: item.quantity, value: item.value, isTaxable: item.isTaxable, couponValue: item.couponValue, isInCart: item.isInCart)
+                    .onChange(of: item.name) { newValue in
+                        vm.updateItem(item, inBudget: budget, name: newValue ?? "", quantity: item.quantity, value: item.value, isTaxable: item.isTaxable, couponValue: item.couponValue, isInCart: true)
                         print("TCB: Item name changed")
                         HapticManager.instance.impact(style: .light)
                     }
                 Spacer()
                 
-                Text(itemTotal, format: Constants.currencyFormat)
+                Text(item.itemTotal, format: Constants.currencyFormat)
                     .foregroundColor(.budgeLightGray)
                     .layoutPriority(1)
                 
@@ -78,7 +73,7 @@ struct BudgetDetailCartCell: View {
                         .foregroundColor(.budgetCellGray)
                         .padding(.horizontal, -20)
                     
-                    VStack {
+                    VStack(alignment: .leading) {
                         
                         HStack(spacing: 20) {
                             
@@ -139,9 +134,9 @@ struct BudgetDetailCartCell: View {
                             Button {
 
                                 withAnimation {                                    
-                                    vm.updateItem(item, inBudget: budget, name: item.name ?? "", quantity: item.quantity, value: item.value, isTaxable: item.isTaxable, couponValue: itemCouponValue, isInCart: false, itemTotal: itemTotal)
+                                    vm.updateItem(item, inBudget: budget, name: itemNameText, quantity: item.quantity, value: item.value, isTaxable: item.isTaxable, couponValue: item.couponValue, isInCart: false, itemTotal: item.itemTotal)
                                     
-                                    vm.updateBudgetCartValue(budget: budget, itemValue: itemTotal, addingToCart: false)
+                                    vm.updateBudgetCartValue(budget: budget, itemValue: item.itemTotal, addingToCart: false)
                                     
                                     HapticManager.instance.notification(type: .success)
                                 }
@@ -157,20 +152,34 @@ struct BudgetDetailCartCell: View {
                         // MARK: - Item Detail Settings
                         VStack(alignment: .leading) {
                             
-                            if taxIsFocused {
-                                HStack {
-                                    Toggle(isOn: $itemIsTaxableToggle) {
-                                        Text("TAXABLE")
-                                            .foregroundColor(.budgeDarkGray)
-                                    }
-                                    .onChange(of: itemIsTaxableToggle) { newValue in
-                                        // Change the item value
-                                        // Adjust the budget
-                                        // Persist the change
-                                        //provide some haptic feedback
-                                    }
-                                    .tint(itemColor)
-                                }
+                            if priceIsFocused {
+                                Text("Price")
+                                    .bold()
+                                    .font(.caption)
+                                    .foregroundColor(.budgeDarkGray)
+                                
+                                Text(item.value, format: Constants.currencyFormat)
+                            } else if quantityIsFocused {
+                                Text("Quantity")
+                                    .bold()
+                                    .font(.caption)
+                                    .foregroundColor(.budgeDarkGray)
+                                
+                                Text(item.quantity, format: .number)
+                            } else if couponIsFocused {
+                                Text("Coupon")
+                                    .bold()
+                                    .font(.caption)
+                                    .foregroundColor(.budgeDarkGray)
+                                
+                                Text(item.couponValue, format: Constants.currencyFormat)
+                            } else if taxIsFocused {
+                                Text("Taxable")
+                                    .bold()
+                                    .font(.caption)
+                                    .foregroundColor(.budgeDarkGray)
+                                
+                                Text(item.isTaxable ? "Yes" : "No")
                             }
                         }
                         .padding(.bottom)
@@ -180,12 +189,7 @@ struct BudgetDetailCartCell: View {
             Divider()
         }
         .onAppear {
-            itemNameText = item.name ?? ""
-            itemValue = item.value
-            itemQuantity = item.quantity
-            itemIsTaxableToggle = item.isTaxable
-            itemCouponValue = item.couponValue
-            itemTotal = item.itemTotal
+            itemNameText = item.unwrappedName
         }
         .onTapGesture {
             dismissKeyboard()

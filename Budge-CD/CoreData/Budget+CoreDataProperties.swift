@@ -23,6 +23,7 @@ extension Budget {
     @NSManaged public var value: Double
     @NSManaged public var items: NSSet?
     @NSManaged public var cartValue: Double
+    @NSManaged public var cartAdjustment: Double
     
     public var unwrappedName: String {
         name ?? "No Name"

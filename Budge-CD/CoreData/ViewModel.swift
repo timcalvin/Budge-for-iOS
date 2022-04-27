@@ -140,6 +140,12 @@ class ViewModel: ObservableObject {
         save()
     }
     
+    func updateBudgetCartAdjustment(budget: Budget, adjustment: Double) {
+        let updateBudget = budget
+        updateBudget.cartAdjustment = adjustment
+        save()
+    }
+    
     // TODO: - Do I need this or need to change it?
 //    func getCartSubtotal(budget: Budget) -> Double {
 //        var total = 0.0
@@ -172,7 +178,7 @@ class ViewModel: ObservableObject {
         return total
     }
     
-    func emptyCart(fromBudget budget: Budget) {
+    func emptyCart(fromBudget budget: Budget, adjustment: Double) {
         for item in budget.itemsArray {
             if item.isInCart {
                 // TODO: - remove itemTotal from budget
@@ -180,6 +186,7 @@ class ViewModel: ObservableObject {
             }
         }
         budget.value -= budget.cartValue
+        budget.value -= adjustment
         budget.cartValue = 0
     }
     

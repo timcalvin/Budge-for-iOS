@@ -51,6 +51,7 @@ struct Budgets: View {
                             } label: {
                                 BudgetListButton(vm: vm, budget: nil)
                             }
+                            .padding(.bottom)
                             .sheet(isPresented: $showingBudgetDetail) {
                                 BudgetSetup(vm: vm)
                             }
