@@ -25,7 +25,6 @@ struct AppIcon: View {
                             .resizable()
                             .frame(width: 40, height: 40)
                             .cornerRadius(5)
-                            .shadow(radius: 5)
                     }
                     .padding(.trailing)
                     VStack(alignment: .leading) {
@@ -45,7 +44,6 @@ struct AppIcon: View {
                             .resizable()
                             .frame(width: 40, height: 40)
                             .cornerRadius(5)
-                            .shadow(radius: 5)
                     }
                     .padding(.trailing)
                     VStack(alignment: .leading) {
@@ -65,7 +63,6 @@ struct AppIcon: View {
                             .resizable()
                             .frame(width: 40, height: 40)
                             .cornerRadius(5)
-                            .shadow(radius: 5)
                     }
                     .padding(.trailing)
                     VStack(alignment: .leading) {
@@ -85,7 +82,6 @@ struct AppIcon: View {
                             .resizable()
                             .frame(width: 40, height: 40)
                             .cornerRadius(5)
-                            .shadow(radius: 5)
                     }
                     .padding(.trailing)
                     VStack(alignment: .leading) {

@@ -18,7 +18,18 @@ struct Settings: View {
             List {
                 
                 Section {
-                    NavigationLink("App Icon", destination: AppIcon())
+                    NavigationLink {
+                        AppIcon()
+                    } label: {
+                        HStack {
+                            Image("budgeIconMain")
+                                .resizable()
+                                .frame(width: 20, height: 20)
+                                .cornerRadius(3)
+                            Text("App Icon")
+                        }
+                    }
+
                 } header: {
                     Text("App")
                         .bold()
@@ -47,7 +58,8 @@ struct Settings: View {
                 }
                 
                 Section {
-                    Text("Misc")
+                    Text("Write a review")
+                    Text("Report a bug")
                 } header: {
                     Text("User")
                         .bold()
