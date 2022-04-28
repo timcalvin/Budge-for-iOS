@@ -9,6 +9,8 @@ import SwiftUI
 
 struct BudgeTabView: View {
     
+    @StateObject var vm = ViewModel()
+    
     @State private var currentTab = Tabs.budgets
     
     init() {
@@ -20,14 +22,14 @@ struct BudgeTabView: View {
         
         TabView(selection: $currentTab) {
             
-            Budgets()
+            Budgets(vm: vm)
                 .tabItem {
                     Image(systemName: "list.bullet")
                     Text("Budgets")
                 }
                 .tag(Tabs.budgets)
             
-            Settings()
+            Settings(vm: vm)
                 .tabItem {
                     Image(systemName: "gear")
                     Text("Settings")

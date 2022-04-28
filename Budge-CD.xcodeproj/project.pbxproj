@@ -12,6 +12,7 @@
 		B11A756728177E55007A2D0C /* Budget+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11A756328177E55007A2D0C /* Budget+CoreDataClass.swift */; };
 		B11A756828177E55007A2D0C /* Budget+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11A756428177E55007A2D0C /* Budget+CoreDataProperties.swift */; };
 		B11A756A2818762A007A2D0C /* BudgetDetailCartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11A75692818762A007A2D0C /* BudgetDetailCartCell.swift */; };
+		B11A756C281A3B33007A2D0C /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11A756B281A3B33007A2D0C /* AppIcon.swift */; };
 		B15165582810FFCB00B17AFA /* BudgeModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B15165562810FFCB00B17AFA /* BudgeModel.xcdatamodeld */; };
 		B1C516302812458100BC0FB3 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C5162F2812458100BC0FB3 /* CoreDataManager.swift */; };
 		B1C516322812469800BC0FB3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C516312812469800BC0FB3 /* ViewModel.swift */; };
@@ -45,6 +46,7 @@
 		B11A756328177E55007A2D0C /* Budget+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Budget+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B11A756428177E55007A2D0C /* Budget+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Budget+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B11A75692818762A007A2D0C /* BudgetDetailCartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailCartCell.swift; sourceTree = "<group>"; };
+		B11A756B281A3B33007A2D0C /* AppIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIcon.swift; sourceTree = "<group>"; };
 		B15165572810FFCB00B17AFA /* BudgeModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BudgeModel.xcdatamodel; sourceTree = "<group>"; };
 		B1C5162F2812458100BC0FB3 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		B1C516312812469800BC0FB3 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
@@ -53,7 +55,7 @@
 		B1C5163728134A7E00BC0FB3 /* Bundle-Decode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decode.swift"; sourceTree = "<group>"; };
 		B1C5163A2813951E00BC0FB3 /* BudgeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgeButton.swift; sourceTree = "<group>"; };
 		B1C5163D2814F46700BC0FB3 /* BudgetDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetail.swift; sourceTree = "<group>"; };
-		B1EE622E280E5B8700B5DFDE /* Budge-CD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Budge-CD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1EE622E280E5B8700B5DFDE /* Budge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Budge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1EE6231280E5B8700B5DFDE /* Budge_CDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budge_CDApp.swift; sourceTree = "<group>"; };
 		B1EE6233280E5B8700B5DFDE /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		B1EE6235280E5B8800B5DFDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -130,7 +132,7 @@
 		B1EE622F280E5B8700B5DFDE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B1EE622E280E5B8700B5DFDE /* Budge-CD.app */,
+				B1EE622E280E5B8700B5DFDE /* Budge.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -221,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				B1EE624E280F941C00B5DFDE /* Settings.swift */,
+				B11A756B281A3B33007A2D0C /* AppIcon.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -250,7 +253,7 @@
 			);
 			name = "Budge-CD";
 			productName = "Budge-CD";
-			productReference = B1EE622E280E5B8700B5DFDE /* Budge-CD.app */;
+			productReference = B1EE622E280E5B8700B5DFDE /* Budge.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -322,6 +325,7 @@
 				B1F3C8D72817316C008EDCFF /* BudgetDetailListCell.swift in Sources */,
 				B1C516302812458100BC0FB3 /* CoreDataManager.swift in Sources */,
 				B1C5163828134A7E00BC0FB3 /* Bundle-Decode.swift in Sources */,
+				B11A756C281A3B33007A2D0C /* AppIcon.swift in Sources */,
 				B1F3C8D5281632F1008EDCFF /* BudgetDetailCart.swift in Sources */,
 				B1EE6257280F968700B5DFDE /* Constants.swift in Sources */,
 				B11A756628177E55007A2D0C /* Item+CoreDataProperties.swift in Sources */,
@@ -475,7 +479,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.timothycbryant.Budge-CD";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Budge;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -506,7 +510,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.timothycbryant.Budge-CD";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Budge;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

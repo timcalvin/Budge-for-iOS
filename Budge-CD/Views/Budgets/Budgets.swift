@@ -12,14 +12,14 @@ import SwiftUI
 struct Budgets: View {
     
     // Core Data reference
-    @StateObject var vm = ViewModel()
+    @ObservedObject var vm: ViewModel
     
     // State properties
     @State private var showingBudgetDetail = false
     @State private var showingSortOptions = false
     
     // Layout properties
-    private var layout = [
+    var layout = [
         GridItem(.flexible()),
         GridItem(.flexible())
     ]
@@ -85,10 +85,4 @@ struct Budgets: View {
 //        .preferredColorScheme(.dark)
     }
 
-}
-
-struct Budgets_Previews: PreviewProvider {
-    static var previews: some View {
-        Budgets()
-    }
 }

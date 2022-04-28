@@ -8,13 +8,61 @@
 import SwiftUI
 
 struct Settings: View {
+    
+    @ObservedObject var vm: ViewModel
+    
+    @State private var taxRate = 0.0
+    
     var body: some View {
-        Text("Settings")
-    }
-}
+        NavigationView {
+            List {
+                
+                Section {
+                    NavigationLink("App Icon", destination: AppIcon())
+                } header: {
+                    Text("App")
+                        .bold()
+                        .font(.title2)
+                        .foregroundColor(.budgeDarkGray)
+                }
+                
+                Section {
+                    VStack(alignment: .leading) {
+                        Text("Tax Rate")
+                            .bold()
+                            .font(.caption)
+                            .foregroundColor(.budgeDarkGray)
+                        
+                        TextField("Price", value: $taxRate, format: .percent)
+                            .keyboardType(.decimalPad)
+                            .onChange(of: taxRate) { newValue in
+                                HapticManager.instance.impact(style: .light)
+                            }
+                    }
+                } header: {
+                    Text("User")
+                        .bold()
+                        .font(.title2)
+                        .foregroundColor(.budgeDarkGray)
+                }
+                
+                Section {
+                    Text("Misc")
+                } header: {
+                    Text("User")
+                        .bold()
+                        .font(.title2)
+                        .foregroundColor(.budgeDarkGray)
+                }
 
-struct Settings_Previews: PreviewProvider {
-    static var previews: some View {
-        Settings()
+                
+            }
+            .listStyle(.insetGrouped)
+            .navigationTitle("Settings")
+            .navigationBarTitleDisplayMode(.inline)
+        }
+        .onAppear {
+
+        }
     }
 }
