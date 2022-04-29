@@ -96,6 +96,7 @@ struct AppIcon: View {
             }
  
         }
+//        .colorMultiply(.budgeBlue)
         .listStyle(.insetGrouped)
         .navigationTitle("App Icon")
     }

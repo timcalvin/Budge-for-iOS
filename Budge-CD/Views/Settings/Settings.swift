@@ -13,12 +13,24 @@ struct Settings: View {
     @ObservedObject var vm: ViewModel
     @Environment(\.openURL) var openURL
     
+    @FocusState var taxRateIsFocused: Bool
+    
     let email = SupportEmail(toAddress: "calvinkayphoto@gmail.com", subject: "Budge Bug Report", messageHeader: "Please describe your issue below:")
     
     @State private var taxRate = UserDefaults.standard.double(forKey: "TaxRate")
     
+    //    init(vm: ViewModel) {
+    //        let navBarAppearance = UINavigationBar.appearance()
+    //        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor(.budgeDarkGray)]
+    //        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor(.budgeDarkGray)]
+    //        navBarAppearance.tintColor = UIColor(.budgeDarkGray)
+    //
+    //        self.vm = vm
+    //    }
+    
     var body: some View {
         NavigationView {
+            
             List {
                 
                 Section {
@@ -58,10 +70,24 @@ struct Settings: View {
                                 .frame(width: 20, height: 20)
                                 .cornerRadius(3)
                             TextField("Enter tax rate", value: $taxRate, format: .number)
+                                .focused($taxRateIsFocused)
                                 .keyboardType(.decimalPad)
                                 .onChange(of: taxRate) { newValue in
                                     UserDefaults.standard.set(newValue, forKey: "TaxRate")
-//                                    HapticManager.instance.impact(style: .light)
+                                    //                                    HapticManager.instance.impact(style: .light)
+                                }
+                                .toolbar {
+                                    ToolbarItemGroup(placement: .keyboard) {
+                                        HStack {
+                                            Spacer()
+                                            Button {
+                                                taxRateIsFocused = false
+                                            } label: {
+                                                Text("Done")
+                                                    .foregroundColor(.budgeBlue)
+                                            }
+                                        }
+                                    }
                                 }
                         }
                     }
@@ -88,7 +114,7 @@ struct Settings: View {
                                 .foregroundColor(.budgeDarkGray)
                         }
                     }
-
+                    
                     Button {
                         email.send(openURL: openURL)
                     } label: {
@@ -99,7 +125,7 @@ struct Settings: View {
                                 .foregroundColor(.budgeDarkGray)
                         }
                     }
-
+                    
                 } header: {
                     Text("User")
                         .bold()
@@ -110,12 +136,14 @@ struct Settings: View {
                 }
                 
             }
+//            .colorMultiply(.budgeBlue)
             .listStyle(.insetGrouped)
             .navigationTitle("Settings")
-            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarTitleDisplayMode(.inline)   
         }
         .onAppear {
-
+            
         }
+        //        .preferredColorScheme(.light)
     }
 }

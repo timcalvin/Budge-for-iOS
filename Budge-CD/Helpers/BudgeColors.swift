@@ -26,6 +26,14 @@ extension ShapeStyle where Self == Color {
         Color(red: 0.78, green: 0.804, blue: 0.827)
     }
     
+    static var budgeFaintGray: Color {
+        Color(red: 242/255, green: 242/255, blue: 247/255)
+    }
+    
+    static var budgeWhite: Color {
+        Color(red: 1, green: 1, blue: 1, opacity: 1)
+    }
+    
     static var budgetCellGray: Color {
         Color(red: 238/255, green: 238/255, blue: 239/255)
     }

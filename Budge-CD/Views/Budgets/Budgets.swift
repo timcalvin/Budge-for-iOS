@@ -28,8 +28,9 @@ struct Budgets: View {
         NavigationView {
             ZStack {
                 
-                LinearGradient(colors: [.budgeBlue, .budgeTeal], startPoint: .top, endPoint: .bottom)
-                    .ignoresSafeArea()
+//                LinearGradient(colors: [.budgeBlue, .budgeTeal], startPoint: .top, endPoint: .bottom)
+//                    .ignoresSafeArea()
+                BudgeBackground()
                 
                 if vm.budgets.count > 0 {
                     
@@ -88,7 +89,7 @@ struct Budgets: View {
                         showingSortOptions.toggle()
                     } label: {
                         Image(systemName: "slider.horizontal.3")
-                            .foregroundColor(.white)
+                            .foregroundColor(.budgeDarkGray)
                     }
                 }
             }

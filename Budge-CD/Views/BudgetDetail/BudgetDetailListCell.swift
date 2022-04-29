@@ -35,6 +35,10 @@ struct BudgetDetailListCell: View {
     @State private var itemIsTaxableToggle = false
     @State private var itemCouponValue = 0.0
     
+    @FocusState var priceTextIsFocused: Bool
+    @FocusState var quantityTextIsFocused: Bool
+    @FocusState var couponTextIsFocused: Bool
+    
     var body: some View {
         
         VStack {
@@ -195,10 +199,25 @@ struct BudgetDetailListCell: View {
                                 
                                 TextField("Price", value: $itemValue, format: Constants.currencyFormat)
                                     .keyboardType(.decimalPad)
+                                    .focused($priceTextIsFocused)
                                     .onChange(of: itemValue) { newValue in
                                         vm.updateItem(item, inBudget: budget, name: item.name ?? "", quantity: item.quantity, value: newValue, isTaxable: item.isTaxable, couponValue: item.couponValue, isInCart: item.isInCart)
                                         HapticManager.instance.impact(style: .light)
                                     }
+                                    .toolbar {
+                                        ToolbarItemGroup(placement: .keyboard) {
+                                            HStack {
+                                                Spacer()
+                                                Button {
+                                                    priceTextIsFocused = false
+                                                } label: {
+                                                    Text("Done")
+                                                        .foregroundColor(.budgeBlue)
+                                                }
+                                            }
+                                        }
+                                    }
+                                
                             }
                             
                             // QUANTITY
@@ -210,9 +229,23 @@ struct BudgetDetailListCell: View {
                                 
                                 TextField("Quantity", value: $itemQuantity, format: .number)
                                     .keyboardType(.decimalPad)
+                                    .focused($quantityTextIsFocused)
                                     .onChange(of: itemQuantity) { newValue in
                                         vm.updateItem(item, inBudget: budget, name: item.name ?? "", quantity: newValue, value: item.value, isTaxable: item.isTaxable, couponValue: item.couponValue, isInCart: item.isInCart)
                                         HapticManager.instance.impact(style: .light)
+                                    }
+                                    .toolbar {
+                                        ToolbarItemGroup(placement: .keyboard) {
+                                            HStack {
+                                                Spacer()
+                                                Button {
+                                                    quantityTextIsFocused = false
+                                                } label: {
+                                                    Text("Done")
+                                                        .foregroundColor(.budgeBlue)
+                                                }
+                                            }
+                                        }
                                     }
                             }
                             
@@ -225,9 +258,23 @@ struct BudgetDetailListCell: View {
                                 
                                 TextField("Coupon", value: $itemCouponValue, format: Constants.currencyFormat)
                                     .keyboardType(.decimalPad)
+                                    .focused($couponTextIsFocused)
                                     .onChange(of: itemCouponValue) { newValue in
                                         vm.updateItem(item, inBudget: budget, name: item.name ?? "", quantity: item.quantity, value: item.value, isTaxable: item.isTaxable, couponValue: newValue, isInCart: item.isInCart)
                                         HapticManager.instance.impact(style: .light)
+                                    }
+                                    .toolbar {
+                                        ToolbarItemGroup(placement: .keyboard) {
+                                            HStack {
+                                                Spacer()
+                                                Button {
+                                                    couponTextIsFocused = false
+                                                } label: {
+                                                    Text("Done")
+                                                        .foregroundColor(.budgeBlue)
+                                                }
+                                            }
+                                        }
                                     }
                             }
                             

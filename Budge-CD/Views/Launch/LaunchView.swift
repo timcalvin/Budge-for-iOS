@@ -11,8 +11,9 @@ struct LaunchView: View {
     
     init() {
         let navBarAppearance = UINavigationBar.appearance()
-        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor(.budgeDarkGray)]
+        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor(.budgeDarkGray)]
+        navBarAppearance.tintColor = UIColor(.budgeDarkGray)
     }   
     
     var body: some View {

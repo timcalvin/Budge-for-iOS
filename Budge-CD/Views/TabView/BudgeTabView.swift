@@ -38,7 +38,7 @@ struct BudgeTabView: View {
             
         }
         .accentColor(.budgeDarkGray)
-        
+        .shadow(color: .black, radius: 10)
     }
 }
 
