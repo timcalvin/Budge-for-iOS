@@ -1,15 +1,16 @@
 {
   "images" : [
     {
-      "filename" : "budgeLogoReverse.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "BudgeLogoReverse.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "BudgeLogoReverse-1.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
