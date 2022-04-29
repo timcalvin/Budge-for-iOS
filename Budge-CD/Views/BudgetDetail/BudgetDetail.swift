@@ -27,7 +27,8 @@ struct BudgetDetail: View {
     }
     
     var headlineColor: Color {
-        budgetColor == .white || budgetColor == .yellow ? .budgeDarkGray : .white
+//        budgetColor == .white || budgetColor == .yellow ? .budgeDarkGray : .white
+        .white
     }
     
     var body: some View {
@@ -110,6 +111,9 @@ struct BudgetDetail: View {
             } label: {
                 Image(systemName: "ellipsis.circle")
             }
+        }
+        .onAppear {
+            vm.updateTaxRate()
         }
     }
 }

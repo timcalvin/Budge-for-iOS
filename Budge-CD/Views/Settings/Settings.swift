@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import StoreKit
 
 struct Settings: View {
     
     @ObservedObject var vm: ViewModel
+    @Environment(\.openURL) var openURL
     
-    @State private var taxRate = 0.0
+    let email = SupportEmail(toAddress: "calvinkayphoto@gmail.com", subject: "Budge Bug Report", messageHeader: "Please describe your issue below:")
+    
+    @State private var taxRate = UserDefaults.standard.double(forKey: "TaxRate")
     
     var body: some View {
         NavigationView {
@@ -27,9 +31,11 @@ struct Settings: View {
                                 .frame(width: 20, height: 20)
                                 .cornerRadius(3)
                             Text("App Icon")
+                                .foregroundColor(.budgeDarkGray)
                         }
                     }
-
+                    
+                    // YNAB
                 } header: {
                     Text("App")
                         .bold()
@@ -43,13 +49,23 @@ struct Settings: View {
                             .bold()
                             .font(.caption)
                             .foregroundColor(.budgeDarkGray)
+                            .padding(.leading, 30)
                         
-                        TextField("Price", value: $taxRate, format: .percent)
-                            .keyboardType(.decimalPad)
-                            .onChange(of: taxRate) { newValue in
-                                HapticManager.instance.impact(style: .light)
-                            }
+                        HStack {
+                            Image(systemName: "percent")
+                                .resizable()
+                                .foregroundColor(.budgeLightGray)
+                                .frame(width: 20, height: 20)
+                                .cornerRadius(3)
+                            TextField("Enter tax rate", value: $taxRate, format: .number)
+                                .keyboardType(.decimalPad)
+                                .onChange(of: taxRate) { newValue in
+                                    UserDefaults.standard.set(newValue, forKey: "TaxRate")
+//                                    HapticManager.instance.impact(style: .light)
+                                }
+                        }
                     }
+                    // iCloud Storage
                 } header: {
                     Text("User")
                         .bold()
@@ -58,15 +74,40 @@ struct Settings: View {
                 }
                 
                 Section {
-                    Text("Write a review")
-                    Text("Report a bug")
+                    Button {
+                        DispatchQueue.main.async {
+                            if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
+                                SKStoreReviewController.requestReview(in: scene)
+                            }
+                        }
+                    } label: {
+                        HStack {
+                            Image(systemName: "star.fill")
+                                .foregroundColor(.budgeLightGray)
+                            Text("Write a review")
+                                .foregroundColor(.budgeDarkGray)
+                        }
+                    }
+
+                    Button {
+                        email.send(openURL: openURL)
+                    } label: {
+                        HStack {
+                            Image(systemName: "ladybug.fill")
+                                .foregroundColor(.budgeLightGray)
+                            Text("Report a bug")
+                                .foregroundColor(.budgeDarkGray)
+                        }
+                    }
+
                 } header: {
                     Text("User")
                         .bold()
                         .font(.title2)
                         .foregroundColor(.budgeDarkGray)
+                } footer: {
+                    Text("App version \(Constants.versionNumber)")
                 }
-
                 
             }
             .listStyle(.insetGrouped)

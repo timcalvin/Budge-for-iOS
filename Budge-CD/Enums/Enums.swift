@@ -16,3 +16,11 @@ enum BudgetDetailTab {
     case list
     case cart
 }
+
+enum SortOptions {
+    case nameAscending
+    case nameDescending
+    case dateAscending
+    case dateDescending
+    case manual
+}

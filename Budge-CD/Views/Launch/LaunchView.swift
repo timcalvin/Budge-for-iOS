@@ -8,9 +8,18 @@
 import SwiftUI
 
 struct LaunchView: View {
+    
+    init() {
+        let navBarAppearance = UINavigationBar.appearance()
+        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+    }   
+    
     var body: some View {
         BudgeTabView()
+            .preferredColorScheme(.light)
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

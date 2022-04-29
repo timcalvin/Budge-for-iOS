@@ -56,8 +56,9 @@ struct Budgets: View {
                                 BudgetSetup(vm: vm)
                             }
                         }
-                        .padding(.horizontal)
+                        .padding()
                     }
+                    .padding(.top, 1)
                     
                 } else {
                     
@@ -77,11 +78,45 @@ struct Budgets: View {
                     }
                     
                 }
+                
             }
+            .navigationTitle("Budgets")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        showingSortOptions.toggle()
+                    } label: {
+                        Image(systemName: "slider.horizontal.3")
+                            .foregroundColor(.white)
+                    }
+                }
+            }
+            .actionSheet(isPresented: $showingSortOptions) {
+                ActionSheet(title: Text("Sort Method"),
+                            message: Text("Choose how you would like your budgets sorted."),
+                            buttons: [
+                                .cancel(),
+                                .default(Text("Name Ascending"), action: {
+                                    // TODO
+                                }),
+                                .default(Text("Name Descending"), action: {
+                                    // TODO
+                                }),
+                                .default(Text("Dated Added Ascending"), action: {
+                                    // TODO
+                                }),
+                                .default(Text("Date Added Descending"), action: {
+                                    // TODO
+                                })
+                            ])
+            }
+            
         }
         .onAppear {
             vm.getBudgets()
         }
+        
 //        .preferredColorScheme(.dark)
     }
 

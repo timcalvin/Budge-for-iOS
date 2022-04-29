@@ -109,7 +109,7 @@ struct BudgetSetup: View {
                             .font(.title2)
                             .padding(.bottom, 10)
                         
-                        Text("Amount")
+                        Text(budget == nil ? "Amount" : "Amount (items still in cart aren't subtracted)")
                             .bold()
                             .font(.caption)
                             .foregroundColor(.budgeDarkGray)
@@ -245,6 +245,9 @@ struct BudgetSetup: View {
                 icon = budget.icon ?? "list.bullet"
                 iconColorName = budget.themeColor ?? "default"
                 iconColor = vm.iconColor(fromBudgetColor: budget.themeColor ?? "default")
+                if vm.iconColor(fromBudgetColor: budget.themeColor ?? "default") == .white {
+                    iconColor = .budgeBlue
+                }
             }
         }
     }

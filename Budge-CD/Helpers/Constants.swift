@@ -10,7 +10,7 @@ import Foundation
 struct Constants {
     
     // Major, Feature, Bug, Build
-    let vNum: String = "1.0.0.10"
+    static let versionNumber: String = "1.0.0 (7)"
     
     // Currency Format
     static var currencyFormat: FloatingPointFormatStyle<Double>.Currency {

@@ -13,6 +13,7 @@ class ViewModel: ObservableObject {
     let manager = CoreDataManager.instance
     
     @Published var budgets = [Budget]()
+    private var taxRate = 0.0
     
     /// Fetch all budgets and store in budgets property
     func getBudgets() {
@@ -32,7 +33,7 @@ class ViewModel: ObservableObject {
     /// Add a new budget
     func addBudget(name: String, value: Double = 0, icon: String = "list.bullet", themeColor: String = "default") {
         let newBudget = Budget(context: manager.context)
-        newBudget.name = name
+        newBudget.name = name.count == 0 ? "New Budget" : name
         newBudget.value = value
         newBudget.icon = icon
         newBudget.themeColor = themeColor
@@ -43,7 +44,7 @@ class ViewModel: ObservableObject {
     /// Update budget
     func updateBudget(budget: Budget, name: String, value: Double = 0, icon: String = "list.bullet", themeColor: String = "default") {
         let budget = budget
-        budget.name = name
+        budget.name = name.count == 0 ? "New Budget" : name
         budget.value = value
         budget.icon = icon
         budget.themeColor = themeColor
@@ -111,7 +112,7 @@ class ViewModel: ObservableObject {
         var itemTotal = (item.value * item.quantity) - item.couponValue
         if item.isTaxable {
             // FIXME: - Don't hard code tax rate once options are open
-            let taxRate: Double = 6 / 100
+            let taxRate: Double = taxRate / 100
             let tax = itemTotal * taxRate
             itemTotal += tax
             let roundedValue = round(itemTotal * 100) / 100.0
@@ -129,6 +130,7 @@ class ViewModel: ObservableObject {
     }
     
     func updateBudgetCartValue(budget: Budget, itemValue value: Double, addingToCart: Bool) {
+        
         let updateBudget = budget
         var currentCartValue = budget.cartValue
         if addingToCart {
@@ -188,6 +190,10 @@ class ViewModel: ObservableObject {
         budget.value -= budget.cartValue
         budget.value -= adjustment
         budget.cartValue = 0
+    }
+    
+    func updateTaxRate() {
+        taxRate = UserDefaults.standard.double(forKey: "TaxRate")
     }
     
     func iconColor(fromBudgetColor color: String) -> Color {
