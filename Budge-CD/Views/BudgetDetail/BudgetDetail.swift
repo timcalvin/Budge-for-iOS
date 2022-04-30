@@ -66,34 +66,34 @@ struct BudgetDetail: View {
                     }
                     .pickerStyle(.segmented)
                     
-                    Button {
-                        showingBudgetDetailSort = true
-                    } label: {
-                        Image(systemName: "slider.horizontal.3")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 26, height: 26)
-                            .foregroundColor(.budgeDarkGray)
-                    }
-                    .actionSheet(isPresented: $showingBudgetDetailSort) {
-                        ActionSheet(title: Text("Sort Method"),
-                                    message: Text("Choose how you would like the items in your list sorted."),
-                                    buttons: [
-                                        .cancel(),
-                                        .default(Text("Name Ascending"), action: {
-                                            // TODO
-                                        }),
-                                        .default(Text("Name Descending"), action: {
-                                            // TODO
-                                        }),
-                                        .default(Text("Dated Added Ascending"), action: {
-                                            // TODO
-                                        }),
-                                        .default(Text("Date Added Descending"), action: {
-                                            // TODO
-                                        })
-                                    ])
-                    }
+//                    Button {
+//                        showingBudgetDetailSort = true
+//                    } label: {
+//                        Image(systemName: "slider.horizontal.3")
+//                            .resizable()
+//                            .scaledToFit()
+//                            .frame(width: 26, height: 26)
+//                            .foregroundColor(.budgeDarkGray)
+//                    }
+//                    .actionSheet(isPresented: $showingBudgetDetailSort) {
+//                        ActionSheet(title: Text("Sort Method"),
+//                                    message: Text("Choose how you would like the items in your list sorted."),
+//                                    buttons: [
+//                                        .cancel(),
+//                                        .default(Text("Name Ascending"), action: {
+//                                            // TODO
+//                                        }),
+//                                        .default(Text("Name Descending"), action: {
+//                                            // TODO
+//                                        }),
+//                                        .default(Text("Dated Added Ascending"), action: {
+//                                            // TODO
+//                                        }),
+//                                        .default(Text("Date Added Descending"), action: {
+//                                            // TODO
+//                                        })
+//                                    ])
+//                    }
                 }
                 .padding(.horizontal)
                 

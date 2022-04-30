@@ -83,16 +83,16 @@ struct Budgets: View {
             }
             .navigationTitle("Budgets")
             .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        showingSortOptions.toggle()
-                    } label: {
-                        Image(systemName: "slider.horizontal.3")
-                            .foregroundColor(.budgeDarkGray)
-                    }
-                }
-            }
+//            .toolbar {
+//                ToolbarItem(placement: .navigationBarTrailing) {
+//                    Button {
+//                        showingSortOptions.toggle()
+//                    } label: {
+//                        Image(systemName: "slider.horizontal.3")
+//                            .foregroundColor(.budgeDarkGray)
+//                    }
+//                }
+//            }
             .actionSheet(isPresented: $showingSortOptions) {
                 ActionSheet(title: Text("Sort Method"),
                             message: Text("Choose how you would like your budgets sorted."),
