@@ -23,9 +23,6 @@ struct BudgetDetailCart: View {
     
     @State private var showingEmptyCartConfirmation = false
     @State private var showingCartIsEmptyAlert = false
-    @State private var showingAdjustTotal = false
-    @State private var adjustTotalValue = 0.0
-    @State private var shouldAdjustUp = true
     
     var body: some View {
         ScrollView {
@@ -40,10 +37,10 @@ struct BudgetDetailCart: View {
                     }
                 }
                 
-                // CART SUBTOTAL
+                // CART TOTAL
                 HStack {
                     Spacer()
-                    Text("\(budget.unwrappedName) cart subtotal: ")
+                    Text("\(budget.unwrappedName) cart total: ")
                         .bold()
                         .foregroundColor(.budgeDarkGray)
                     if budget.cartValue != 0 {
@@ -55,62 +52,6 @@ struct BudgetDetailCart: View {
                         Text(0.0, format: Constants.currencyFormat)
                             .bold()
                             .foregroundColor(.budgeDarkGray)
-                    }
-                    Button {
-                        showingAdjustTotal.toggle()
-                    } label: {
-                        if showingAdjustTotal {
-                            ComponentLabel(image: "chevron.down.circle.fill")
-                        } else {
-                            ComponentLabel(image: "chevron.right.circle.fill")
-                        }
-                    }
-                    .foregroundColor(budgetColor)
-                }
-                
-                // ADJUSTMENT
-                if showingAdjustTotal {
-                    HStack {
-                        Spacer()
-                        Text("Adjust total: ")
-                            .bold()
-                            .foregroundColor(.budgeDarkGray)
-                        TextField("Adjustment", value: $adjustTotalValue, format: Constants.currencyFormat)
-                            .keyboardType(.decimalPad)
-                            .frame(width: 65)
-                            .multilineTextAlignment(.trailing)
-                            .padding(.trailing, 6)
-                            .onChange(of: adjustTotalValue) { adjustment in
-                                vm.updateBudgetCartAdjustment(budget: budget, adjustment: adjustTotalValue)
-                            }
-                        Button {
-                            shouldAdjustUp.toggle()
-                        } label: {
-                            if shouldAdjustUp {
-                                ComponentLabel(image: "plus.circle.fill")
-                                    .foregroundColor(.green)
-                            } else {
-                                ComponentLabel(image: "minus.circle.fill")
-                                    .foregroundColor(.red)
-                            }
-                        }
-                    }
-                    
-                    // CART TOTAL
-                    HStack {
-                        Spacer()
-                        Text("Total with adjustments: ")
-                            .bold()
-                            .foregroundColor(.budgeDarkGray)
-                        
-                        
-                        Text(budget.cartValue + (shouldAdjustUp ? budget.cartAdjustment : budget.cartAdjustment * -1), format: Constants.currencyFormat)
-                            .bold()
-                            .foregroundColor(.red)
-                            .frame(width: 70)
-                        
-                        ComponentLabel(image: "circle")
-                            .foregroundColor(.white)
                     }
                 }
             }
@@ -137,8 +78,7 @@ struct BudgetDetailCart: View {
             .alert("Empty Cart", isPresented: $showingEmptyCartConfirmation) {
                 Button("Cancel", role: .cancel) { }
                 Button("Empty", role: .destructive) {
-                    vm.emptyCart(fromBudget: budget, adjustment: shouldAdjustUp ? budget.cartAdjustment : budget.cartAdjustment * -1)
-                    adjustTotalValue = 0
+                    vm.emptyCart(fromBudget: budget)
                     HapticManager.instance.notification(type: .success)
                 }
             } message: {
@@ -150,7 +90,6 @@ struct BudgetDetailCart: View {
                 Text("Your cart is already empty. There are no items to remove.")
             }
             .onAppear(perform: {
-                adjustTotalValue = budget.cartAdjustment
             })
             .padding(.horizontal)
         }

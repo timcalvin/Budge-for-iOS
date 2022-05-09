@@ -180,7 +180,7 @@ class ViewModel: ObservableObject {
         return total
     }
     
-    func emptyCart(fromBudget budget: Budget, adjustment: Double) {
+    func emptyCart(fromBudget budget: Budget) {
         for item in budget.itemsArray {
             if item.isInCart {
                 // TODO: - remove itemTotal from budget
@@ -188,7 +188,6 @@ class ViewModel: ObservableObject {
             }
         }
         budget.value -= budget.cartValue
-        budget.value -= adjustment
         budget.cartValue = 0
     }
     

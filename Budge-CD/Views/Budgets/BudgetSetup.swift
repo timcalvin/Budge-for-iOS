@@ -208,7 +208,15 @@ struct BudgetSetup: View {
             }
             
             // MARK: - Delete Button
-            if budget != nil {
+            if valueIsFocused {
+                Button {
+                    valueIsFocused = false
+                } label: {
+                    Text("Done")
+                }
+                .buttonStyle(BudgeButton(buttonColor: .budgeBlue, textColor: .white))
+                .padding()
+            } else if budget != nil {
                 Button {
                     showingDeleteAlert = true
                 } label: {

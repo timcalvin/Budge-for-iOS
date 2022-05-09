@@ -48,7 +48,13 @@ struct BudgetDetailListCell: View {
                 
                 Button {
                     showingItemDetail.toggle()
-                    priceIsFocused = true
+                    priceIsFocused.toggle()
+                    priceTextIsFocused.toggle()
+                    quantityIsFocused.toggle()
+                    quantityTextIsFocused.toggle()
+                    couponIsFocused.toggle()
+                    couponTextIsFocused.toggle()
+                    taxIsFocused.toggle()
                     HapticManager.instance.impact(style: .rigid)
                 } label: {
                     Image(systemName: !showingItemDetail ? "circle" : "circle.inset.filled")
@@ -63,7 +69,6 @@ struct BudgetDetailListCell: View {
                     .onChange(of: itemNameText) { newValue in
                         vm.updateItem(item, inBudget: budget, name: newValue, quantity: item.quantity, value: item.value, isTaxable: item.isTaxable, couponValue: item.couponValue, isInCart: item.isInCart)
                         print("TCB: Item name changed")
-                        HapticManager.instance.impact(style: .light)
                     }
                 
             }
@@ -83,9 +88,12 @@ struct BudgetDetailListCell: View {
                             // PRICE BUTTON
                             Button {
                                 quantityIsFocused = false
+                                quantityTextIsFocused = false
                                 taxIsFocused = false
                                 couponIsFocused = false
+                                couponTextIsFocused = false
                                 priceIsFocused = true
+                                priceTextIsFocused = true
                                 HapticManager.instance.impact(style: .light)
                             } label: {
                                 ComponentLabel(image: "dollarsign.circle")
@@ -96,9 +104,12 @@ struct BudgetDetailListCell: View {
                             Button {
                                 // Set focus to price
                                 quantityIsFocused = true
+                                quantityTextIsFocused = true
                                 taxIsFocused = false
                                 couponIsFocused = false
+                                couponTextIsFocused = false
                                 priceIsFocused = false
+                                priceTextIsFocused = false
                                 HapticManager.instance.impact(style: .light)
                             } label: {
                                 ComponentLabel(image: "xmark.circle")
@@ -109,9 +120,12 @@ struct BudgetDetailListCell: View {
                             Button {
                                 // Set focus to price
                                 quantityIsFocused = false
+                                quantityIsFocused = false
                                 taxIsFocused = false
                                 couponIsFocused = true
+                                couponTextIsFocused = true
                                 priceIsFocused = false
+                                priceTextIsFocused = false
                                 HapticManager.instance.impact(style: .light)
                             } label: {
                                 ComponentLabel(image: "scissors.circle")
@@ -122,9 +136,12 @@ struct BudgetDetailListCell: View {
                             Button {
                                 // Set focus to price
                                 quantityIsFocused = false
+                                quantityTextIsFocused = false
                                 taxIsFocused = true
                                 couponIsFocused = false
+                                couponTextIsFocused = false
                                 priceIsFocused = false
+                                priceTextIsFocused = false
                                 HapticManager.instance.impact(style: .light)
                             } label: {
                                 ComponentLabel(image: "staroflife.circle")
@@ -172,9 +189,12 @@ struct BudgetDetailListCell: View {
                             .alert("Item Has No Value", isPresented: $showingPriceAlert) {
                                 Button("Add Price", role: .cancel) {
                                     quantityIsFocused = false
+                                    quantityTextIsFocused = false
                                     taxIsFocused = false
                                     couponIsFocused = false
+                                    couponTextIsFocused = false
                                     priceIsFocused = true
+                                    priceTextIsFocused = true
                                 }
                                 Button("Add To Cart", role: .destructive) {
                                     vm.updateItem(item, inBudget: budget, name: item.name ?? "", quantity: item.quantity, value: item.value, isTaxable: item.isTaxable, couponValue: item.couponValue, isInCart: true)
@@ -202,7 +222,6 @@ struct BudgetDetailListCell: View {
                                     .focused($priceTextIsFocused)
                                     .onChange(of: itemValue) { newValue in
                                         vm.updateItem(item, inBudget: budget, name: item.name ?? "", quantity: item.quantity, value: newValue, isTaxable: item.isTaxable, couponValue: item.couponValue, isInCart: item.isInCart)
-                                        HapticManager.instance.impact(style: .light)
                                     }
                                     .toolbar {
                                         ToolbarItemGroup(placement: .keyboard) {
@@ -232,7 +251,6 @@ struct BudgetDetailListCell: View {
                                     .focused($quantityTextIsFocused)
                                     .onChange(of: itemQuantity) { newValue in
                                         vm.updateItem(item, inBudget: budget, name: item.name ?? "", quantity: newValue, value: item.value, isTaxable: item.isTaxable, couponValue: item.couponValue, isInCart: item.isInCart)
-                                        HapticManager.instance.impact(style: .light)
                                     }
                                     .toolbar {
                                         ToolbarItemGroup(placement: .keyboard) {
@@ -261,7 +279,6 @@ struct BudgetDetailListCell: View {
                                     .focused($couponTextIsFocused)
                                     .onChange(of: itemCouponValue) { newValue in
                                         vm.updateItem(item, inBudget: budget, name: item.name ?? "", quantity: item.quantity, value: item.value, isTaxable: item.isTaxable, couponValue: newValue, isInCart: item.isInCart)
-                                        HapticManager.instance.impact(style: .light)
                                     }
                                     .toolbar {
                                         ToolbarItemGroup(placement: .keyboard) {
@@ -287,7 +304,6 @@ struct BudgetDetailListCell: View {
                                     }
                                     .onChange(of: itemIsTaxableToggle, perform: { newValue in
                                         vm.updateItem(item, inBudget: budget, name: item.name ?? "", quantity: item.quantity, value: item.value, isTaxable: newValue, couponValue: item.couponValue, isInCart: item.isInCart)
-                                        HapticManager.instance.impact(style: .light)
                                     })
                                     .alert("Tax Rate Not Set", isPresented: $showingTaxAlert) {
                                         Button("OK", role: .cancel) {
