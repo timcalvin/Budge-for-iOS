@@ -19,6 +19,9 @@ class ViewModel: ObservableObject {
     func getBudgets() {
         
         let request = NSFetchRequest<Budget>(entityName: "Budget")
+        request.sortDescriptors = [
+            NSSortDescriptor(keyPath: \Budget.name, ascending: true)
+        ]
         
         // TODO: - Add any sorthing or filtering
         
