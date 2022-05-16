@@ -192,6 +192,7 @@ class ViewModel: ObservableObject {
         }
         budget.value -= budget.cartValue
         budget.cartValue = 0
+        save()
     }
     
     func updateTaxRate() {
