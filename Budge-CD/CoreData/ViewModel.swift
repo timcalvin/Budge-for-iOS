@@ -96,6 +96,9 @@ class ViewModel: ObservableObject {
         updateItem.couponValue = couponValue
         updateItem.isInCart = isInCart
         updateItem.itemTotal = itemTotal
+        if isInCart {
+            updateItem.cartTimestamp = Date()
+        }
         save()
     }
     

@@ -23,6 +23,7 @@ extension Item {
     @NSManaged public var name: String?
     @NSManaged public var quantity: Double
     @NSManaged public var timestamp: Date?
+    @NSManaged public var cartTimestamp: Date?
     @NSManaged public var value: Double
     @NSManaged public var budget: Budget?
     
@@ -32,6 +33,10 @@ extension Item {
     
     public var unwrappedTimestamp: Date {
         timestamp ?? Date()
+    }
+    
+    public var unwrappedCartTimestamp: Date {
+        cartTimestamp ?? Date()
     }
 
 }
