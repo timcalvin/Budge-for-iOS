@@ -27,11 +27,13 @@ class CoreDataManager {
     }
     
     func save() {
-        do {
-            try context.save()
-            print("TCB: Saved successfully!")
-        } catch let error {
-            print("TCB: Error saving Core Data: \(error.localizedDescription)")
+        if context.hasChanges {
+            do {
+                try context.save()
+                print("TCB: Saved successfully!")
+            } catch let error {
+                print("TCB: Error saving Core Data: \(error.localizedDescription)")
+            }
         }
     }
     
