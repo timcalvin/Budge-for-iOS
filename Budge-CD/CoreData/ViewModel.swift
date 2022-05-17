@@ -60,11 +60,6 @@ class ViewModel: ObservableObject {
         save()
     }
     
-//    /// Get all items and store in items array of budgets property
-//    func getItems() {
-//
-//    }
-    
     /// Add new item
     func addItem(toBudget budget: Budget, withName name: String) {
         guard name.count > 0 else {
@@ -153,29 +148,7 @@ class ViewModel: ObservableObject {
         updateBudget.cartAdjustment = adjustment
         save()
     }
-    
-    // TODO: - Do I need this or need to change it?
-//    func getCartSubtotal(budget: Budget) -> Double {
-//        var total = 0.0
-//        for item in budget.itemsArray {
-//            if item.isInCart {
-//                total += item.itemTotal
-//            }
-//        }
-//        return total
-//    }
-    
-    // TODO: - Do I need this or need to change it?
-//    func getCartTotal(budget: Budget, adjustment: Double, shouldAdjustUp: Bool) -> Double {
-//        var total = getCartSubtotal(budget: budget)
-//        if shouldAdjustUp {
-//            total += adjustment
-//        } else {
-//            total -= adjustment
-//        }
-//        return total
-//    }
-    
+        
     func getNumberOfItemsInCart(budget: Budget) -> Int {
         var total = 0
         for item in budget.itemsArray {
@@ -198,6 +171,7 @@ class ViewModel: ObservableObject {
         save()
     }
     
+    // TODO: - store in core data
     func updateTaxRate() {
         taxRate = UserDefaults.standard.double(forKey: "TaxRate")
     }
