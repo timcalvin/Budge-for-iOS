@@ -33,6 +33,8 @@ class ViewModel: ObservableObject {
         
     }
     
+    // MARK: - Budget functions
+    
     /// Add a new budget
     func addBudget(name: String, value: Double = 0, icon: String = "list.bullet", themeColor: String = "default") {
         let newBudget = Budget(context: manager.context)
@@ -59,6 +61,30 @@ class ViewModel: ObservableObject {
         manager.context.delete(budget)
         save()
     }
+    
+    /// Update budget value
+    func updateBudgetValue(budget: Budget, newValue value: Double) {
+        
+        let updateBudget = budget
+        updateBudget.value = value
+        save()
+        
+    }
+    
+    /// Empty cart
+    func emptyCart(fromBudget budget: Budget) {
+        for item in budget.itemsArray {
+            if item.isInCart {
+                // TODO: - remove itemTotal from budget
+                deleteItem(item: item)
+            }
+        }
+        budget.value -= budget.cartValue
+        budget.cartValue = 0
+        save()
+    }
+    
+    // MARK: - Item functions
     
     /// Add new item
     func addItem(toBudget budget: Budget, withName name: String) {
@@ -103,11 +129,33 @@ class ViewModel: ObservableObject {
         save()
     }
     
+    // MARK: - Universal functions
+    
     /// Save the current context to Core Data
     func save() {
         manager.save()
         getBudgets()
     }
+    
+    func iconColor(fromBudgetColor color: String) -> Color {
+        if color == "default" {
+            return .white
+        } else if color == "red" {
+            return .red
+        } else if color == "orange" {
+            return .orange
+        } else if color == "yellow" {
+            return .yellow
+        } else if color == "green" {
+            return .green
+        } else if color == "purple" {
+            return .purple
+        } else {
+            return .white
+        }
+    }
+    
+    // FIXME: - would these be better as a computed property?
     
     func itemTotal(item: Item) -> Double {
         var itemTotal = (item.value * item.quantity) - item.couponValue
@@ -120,14 +168,6 @@ class ViewModel: ObservableObject {
             itemTotal = roundedValue
         }
         return itemTotal
-    }
-    
-    func updateBudgetValue(budget: Budget, newValue value: Double) {
-        
-        let updateBudget = budget
-        updateBudget.value = value
-        save()
-        
     }
     
     func updateBudgetCartValue(budget: Budget, itemValue value: Double, addingToCart: Bool) {
@@ -159,39 +199,10 @@ class ViewModel: ObservableObject {
         return total
     }
     
-    func emptyCart(fromBudget budget: Budget) {
-        for item in budget.itemsArray {
-            if item.isInCart {
-                // TODO: - remove itemTotal from budget
-                deleteItem(item: item)
-            }
-        }
-        budget.value -= budget.cartValue
-        budget.cartValue = 0
-        save()
-    }
+    // FIXME: - store in core data
     
-    // TODO: - store in core data
     func updateTaxRate() {
         taxRate = UserDefaults.standard.double(forKey: "TaxRate")
-    }
-    
-    func iconColor(fromBudgetColor color: String) -> Color {
-        if color == "default" {
-            return .white
-        } else if color == "red" {
-            return .red
-        } else if color == "orange" {
-            return .orange
-        } else if color == "yellow" {
-            return .yellow
-        } else if color == "green" {
-            return .green
-        } else if color == "purple" {
-            return .purple
-        } else {
-            return .white
-        }
     }
     
 }

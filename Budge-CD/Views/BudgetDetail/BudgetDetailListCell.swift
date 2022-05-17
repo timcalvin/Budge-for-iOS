@@ -180,7 +180,7 @@ struct BudgetDetailListCell: View {
                                         
                                         HapticManager.instance.notification(type: .success)
                                     }
-
+                                    
                                 }
                             } label: {
                                 ComponentLabel(image: "cart.circle")
@@ -217,25 +217,40 @@ struct BudgetDetailListCell: View {
                                     .font(.caption)
                                     .foregroundColor(.budgeDarkGray)
                                 
-                                TextField("Price", value: $itemValue, format: Constants.currencyFormat)
-                                    .keyboardType(.decimalPad)
-                                    .focused($priceTextIsFocused)
-                                    .onChange(of: itemValue) { newValue in
-                                        vm.updateItem(item, inBudget: budget, name: item.name ?? "", quantity: item.quantity, value: newValue, isTaxable: item.isTaxable, couponValue: item.couponValue, isInCart: item.isInCart)
-                                    }
-                                    .toolbar {
-                                        ToolbarItemGroup(placement: .keyboard) {
-                                            HStack {
-                                                Spacer()
-                                                Button {
-                                                    priceTextIsFocused = false
-                                                } label: {
-                                                    Text("Done")
-                                                        .foregroundColor(.budgeBlue)
-                                                }
+                                ZStack {
+                                    TextField("Price", value: $itemValue, format: Constants.currencyFormat)
+//                                        .modifier(TextFieldClearButton(value: $itemValue))
+                                        .keyboardType(.decimalPad)
+                                        .focused($priceTextIsFocused)
+                                        .onChange(of: itemValue) { newValue in
+                                            vm.updateItem(item, inBudget: budget, name: item.name ?? "", quantity: item.quantity, value: newValue, isTaxable: item.isTaxable, couponValue: item.couponValue, isInCart: item.isInCart)
+                                        }
+//                                    HStack {
+//                                        Spacer()
+//                                        Button {
+//                                            itemValue = 0
+//                                        } label: {
+//                                            Image(systemName: "x.circle.fill")
+//                                                .resizable()
+//                                                .scaledToFit()
+//                                                .frame(width: 20, height: 20)
+//                                                .foregroundColor(.budgeLightGray)
+//                                        }
+//                                    }
+                                }
+                                .toolbar {
+                                    ToolbarItemGroup(placement: .keyboard) {
+                                        HStack {
+                                            Spacer()
+                                            Button {
+                                                priceTextIsFocused = false
+                                            } label: {
+                                                Text("Done")
+                                                    .foregroundColor(.budgeBlue)
                                             }
                                         }
                                     }
+                                }
                                 
                             }
                             

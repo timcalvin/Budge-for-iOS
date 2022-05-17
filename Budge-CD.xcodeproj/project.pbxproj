@@ -23,6 +23,7 @@
 		B1C5163828134A7E00BC0FB3 /* Bundle-Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C5163728134A7E00BC0FB3 /* Bundle-Decode.swift */; };
 		B1C5163B2813951E00BC0FB3 /* BudgeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C5163A2813951E00BC0FB3 /* BudgeButton.swift */; };
 		B1C5163E2814F46700BC0FB3 /* BudgetDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C5163D2814F46700BC0FB3 /* BudgetDetail.swift */; };
+		B1CDE9112833F3C400CCCBAC /* TextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CDE9102833F3C400CCCBAC /* TextFieldClearButton.swift */; };
 		B1EE6232280E5B8700B5DFDE /* Budge_CDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE6231280E5B8700B5DFDE /* Budge_CDApp.swift */; };
 		B1EE6234280E5B8700B5DFDE /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE6233280E5B8700B5DFDE /* LaunchView.swift */; };
 		B1EE6236280E5B8800B5DFDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1EE6235280E5B8800B5DFDE /* Assets.xcassets */; };
@@ -60,6 +61,7 @@
 		B1C5163728134A7E00BC0FB3 /* Bundle-Decode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decode.swift"; sourceTree = "<group>"; };
 		B1C5163A2813951E00BC0FB3 /* BudgeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgeButton.swift; sourceTree = "<group>"; };
 		B1C5163D2814F46700BC0FB3 /* BudgetDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetail.swift; sourceTree = "<group>"; };
+		B1CDE9102833F3C400CCCBAC /* TextFieldClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearButton.swift; sourceTree = "<group>"; };
 		B1EE622E280E5B8700B5DFDE /* Budge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Budge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1EE6231280E5B8700B5DFDE /* Budge_CDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budge_CDApp.swift; sourceTree = "<group>"; };
 		B1EE6233280E5B8700B5DFDE /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				B1C5163A2813951E00BC0FB3 /* BudgeButton.swift */,
 				B1F3C8D828173A8A008EDCFF /* ComponentLabel.swift */,
 				B14A400C281C332A001BFA38 /* BudgeBackground.swift */,
+				B1CDE9102833F3C400CCCBAC /* TextFieldClearButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				B1C516302812458100BC0FB3 /* CoreDataManager.swift in Sources */,
 				B1C5163828134A7E00BC0FB3 /* Bundle-Decode.swift in Sources */,
 				B11A756C281A3B33007A2D0C /* AppIcon.swift in Sources */,
+				B1CDE9112833F3C400CCCBAC /* TextFieldClearButton.swift in Sources */,
 				B1F3C8D5281632F1008EDCFF /* BudgetDetailCart.swift in Sources */,
 				B1EE6257280F968700B5DFDE /* Constants.swift in Sources */,
 				B11A756628177E55007A2D0C /* Item+CoreDataProperties.swift in Sources */,

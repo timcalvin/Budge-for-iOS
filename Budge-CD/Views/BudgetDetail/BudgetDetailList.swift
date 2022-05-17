@@ -43,6 +43,7 @@ struct BudgetDetailList: View {
                         .frame(width: 26, height: 26)
                         .foregroundColor(.budgeLightGray)
                     TextField("New Item", text: $newItemText, prompt: Text("add new item..."))
+//                        .modifier(TextFieldClearButton(text: $newItemText))
                         .focused($newItemIsFocused)
                         .submitLabel(SubmitLabel.done)
                         .autocapitalization(.words)
